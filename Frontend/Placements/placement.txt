@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, 
+				initial-scale=1.0">
+  <!-- Adding Logo to web page  -->
+  <link class="fill-white" rel="icon" href="../Images/logo3-removebg-preview.png">
+  <!-- Link to Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Linking other css files -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../Components/Navbar.css">
+  <link rel="stylesheet" href="../Components/Banner.css">
+  <link rel="stylesheet" href="../Components/Footer.css">
+  <link rel="stylesheet" href="../Components/Cursor.css">
+  <link rel="stylesheet" href="/public/style.css">
+
+  <!-- Linking Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+
+  <title>Learning Heaven</title>
+  <style>
+    body::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <link rel="stylesheet" href="./Placement_style.css">
+
+  <!-- <link rel="stylesheet" href="responsive.css"> -->
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="skyblue p-4 darkable" id="navlogo">
+    <div class="container mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <a href="#" class="flex items-center text-white text-xl font-bold">
+        <img id="nav-logo" src="../Images/logo4-removebg-preview.png" alt="Logo" class="w-52 h-8 mr-2">
+      </a>
+
+      <!-- Hamburger Menu Button -->
+      <button class="text-white focus:outline-none lg:hidden" id="menu-btn" aria-label="Toggle menu">
+        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path id="menu-icon-line1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16"></path>
+          <path id="menu-icon-line2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16">
+          </path>
+          <path id="menu-icon-line3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 18h16">
+          </path>
+        </svg>
+      </button>
+
+      <!-- Navbar Links -->
+      <ul class="hidden lg:flex space-x-4">
+        <li><a href="/" class="darkable  nav-link text-white ">Home</a></li>
+        <li><a href="/courses" class="darkable  nav-link text-white ">Courses</a></li>
+        <li><a href="/resources" class="darkable  nav-link text-white ">Resources</a></li>
+        <li><a href="/contact" class="darkable  nav-link text-white ">Contact</a></li>
+        <li><a href="/products" class="darkable  nav-link text-white ">Products</a></li>
+        <li><a href="/Placements" class="darkable  nav-link text-white ">Placements</a></li>
+        <li><a href="/CodeCompiler.html" class="darkable  nav-link text-white ">Compiler</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Responsive Menu -->
+  <div class="lg:hidden hidden" id="menu">
+    <ul class="bg-gray-800 p-2 text-center">
+      <li><a href="/" class="darkable block text-white py-2">Home</a></li>
+      <li><a href="/courses" class="darkable block text-white py-2">Courses</a></li>
+      <li><a href="/resources" class="darkable block text-white py-2">Resources</a></li>
+      <li><a href="/contact" class="darkable block text-white py-2">Contact</a></li>
+      <li><a href="/products" class="darkable block text-white py-2">Products</a></li>
+      <li><a href="/placements" class="darkable block text-white py-2">Placements</a></li>
+      <li><a href="/CodeCompiler.html" class="darkable block text-white py-2">Compiler</a></li>
+    </ul>
+  </div>
+
+  <script>
+    // Toggle menu visibility with animation and change icon
+    document.getElementById('menu-btn').addEventListener('click', function () {
+      var menu = document.getElementById('menu');
+      menu.classList.toggle('hidden');
+
+      // Rotate hamburger icon and change its appearance
+      var icon = document.getElementById('menu-icon');
+      icon.classList.toggle('rotate');
+
+      var line1 = document.getElementById('menu-icon-line1');
+      var line2 = document.getElementById('menu-icon-line2');
+      var line3 = document.getElementById('menu-icon-line3');
+
+      if (menu.classList.contains('hidden')) {
+        line1.setAttribute('d', 'M4 6h16');
+        line2.setAttribute('d', 'M4 12h16');
+        line3.setAttribute('d', 'M4 18h16');
+      } else {
+        line1.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+        line2.setAttribute('d', 'M6 6l12 12');
+        line3.setAttribute('d', 'M6 6l12 12');
+      }
+    });
+
+  </script>
+
+
+
+
+
+
+  <!-- Banner -->
+  <div class="banner darkable">
+    <p>Contact Somnath Kaushik for discount coupon Codes on Coding Blocks Courses <a
+        href="mailto:somnath.kaushik_cs21@gla.ac.in">
+        <d>somnath.kaushik_cs21@gla.ac.in</d>
+      </a></p>
+    <button id="closeBanner">X</button>
+  </div>
+
+  <!-- Content (for spacing) -->
+  <div style="height: 1000px;">
+    <!-- This is just to create some space so the banner doesn't cover content -->
+  </div>
+
+  <script>
+    // JavaScript to handle banner removal
+    document.getElementById('closeBanner').addEventListener('click', function () {
+      var banner = document.querySelector('.banner');
+      banner.style.display = 'none';
+    });
+  </script>
+
+
+
+
+
+
+
+  <div class="main-container">
+
+    <div class="navcontainer border-white border-2">
+
+
+      <header>
+
+        <div class="hamburger-menu icn menuicn logosec darkable" id="menuicn" alt="menu-icon">
+          <div class="line "></div>
+          <div class="line "></div>
+          <div class="line "></div>
+        </div>
+        <!-- </div> -->
+
+      </header>
+
+      <script>
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+
+        hamburgerMenu.addEventListener('click', function () {
+          this.classList.toggle('open');
+        });
+      </script>
+
+
+      <nav class="nav darkable">
+        <div class="nav-upper-options ">
+          <ul>
+            <li class="border-white border-2">
+              <button class="nav-option option1 darkable" onclick="showDashboard()">
+                <img src="../Images/dashboard.png" class="nav-img" alt="articles">
+                <h3>Dashboard</h3>
+              </button>
+            </li>
+            <li class="border-white border-2">
+              <button class="nav-option option2" onclick="Blogs()">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png" class="nav-img"
+                  alt="blogs">
+                <h3>Tech Blogs</h3>
+              </button>
+            </li>
+            <li class="border-white border-2">
+              <button class="nav-option option3" onclick="BuildResume()">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img"
+                  alt="report">
+                <h3>Build Resume</h3>
+              </button>
+            </li>
+            <!-- <li class="border-white border-2">
+              <button class="nav-option option4" onclick="showResources()">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png" class="nav-img" alt="institution">
+                <h3>Resources</h3>
+              </button>
+            </li>
+            <li class="border-white border-2">
+              <button class="nav-option option6" onclick="showContactUs()">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png" class="nav-img" alt="settings">
+                <h3>Contact Us</h3>
+              </button>
+            </li> -->
+            <li class="border-white border-2">
+              <button class="nav-option option5" onclick="showLogin()">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png" class="nav-img"
+                  alt="articles">
+                <h3>Login</h3>
+              </button>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <div class="main">
+
+
+      <!-- Content -->
+      <div id="content" class="flex-1 ">
+        <!-- Default content -->
+        <div class="report-container darkable">
+          <div class="report-header">
+            <h1 class="recent-Articles">Recent Placements</h1>
+            <!-- <button class="view">View All</button> -->
+            <div class="option-container text-center mb-0 right-0">
+              <select onchange="showTable(this.value)"
+                class="skyblue hover:dimskyblue text-white font-semibold py-2 px-4 rounded">
+                <!-- <option value="" disabled selected>Choose</option> -->
+                <option value="2024" selected>2024</option>
+                <option value="2025">2025</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- --------------------------- 2024 data--------------------------------------------------------------------- -->
+
+
+          <div class="table-container " id="table-2024">
+            <div class="report-body">
+            </div>
+          </div>
+
+
+          <!-- --------------------------- 2025 data--------------------------------------------------------------------- -->
+
+
+
+          <div class="table-container hidden" id="table-2025">
+            <div class="report-body">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <script>
+      // Function to show Dashboard content
+      function showDashboard() {
+        const dashboardContent = `
+        <div class="report-container darkable ${document.body.classList.contains('dark') ? 'dark' : ''}">
+          <div class="report-header">
+            <h1 class="recent-Articles">Recent Placements</h1>
+            <!-- <button class="view">View All</button> -->
+            <div class="option-container text-center mb-0 right-0">
+              <select onchange="showTable(this.value)"
+                class="skyblue hover:dimskyblue text-white font-semibold py-2 px-4 rounded">
+                <!-- <option value="" disabled selected>Choose</option> -->
+                <option value="2024" selected>2024</option>
+                <option value="2025">2025</option>
+              </select>
+            </div>
+          </div>
+  
+          <!-- --------------------------- 2024 data--------------------------------------------------------------------- -->
+  
+  
+          <div class="table-container " id="table-2024">
+  
+  
+            <div class="report-body">
+              
+            </div>
+          </div>
+  
+  
+          <!-- --------------------------- 2025 data--------------------------------------------------------------------- -->
+  
+  
+  
+          <div class="table-container hidden" id="table-2025">
+            <div class="report-body">
+            </div>
+          </div>
+
+        </div>
+        `;
+        document.getElementById('content').innerHTML = dashboardContent;
+      }
+
+      
+      // Function to show Schools content
+      function Blogs() {
+        document.getElementById('content').innerHTML = `
+        <div class="container mx-auto py-8 px-4 darkable">
+          <h1 class="text-3xl font-bold textskyblue mb-24 text-center darkable">Welcome to Our Blog Page</h1>
+
+          <div class="flex flex-wrap gap-4 darkable " id="blogContainer">
+            
+              <!-- Blog Posts will be added here dynamically -->
+          </div>
+        </div>
+        `;
+        // Fetch data from the API and render it
+        fetch('http://localhost:8000/TechNews')
+          .then(response => response.json())
+          .then(data => {
+            const blogContainer = document.getElementById('blogContainer');
+
+            data.data.forEach(blog => {
+              const blogDiv = document.createElement('div');
+              blogDiv.classList.add('border-2' , 'border-white' , 'p-4' , 'dimskyblue', 'rounded', 'p-4', 'w-40%', 'h-auto', 'max-w-48', 'max-h-full' , 'darkable');
+              blogDiv.innerHTML = `
+              
+                        <img src="${blog.image}" alt="${blog.title}" class="w-full h-auto mb-4 rounded darkable" style="max-width: 100%; max-height: 300px;">
+                        <h2 class="text-xl font-bold mb-2 darkable">${blog.title}</h2>
+                        <p class="text-gray-700 mb-2 darkable">${blog.content}</p>
+                        <p class="text-gray-600 font-bold darkable">Author: ${blog.author}</p>
+                        
+                        
+                    `;
+
+
+              blogContainer.appendChild(blogDiv);
+            });
+          })
+          .catch(error => {
+            console.error('Error fetching data:', error);
+          });
+      }
+
+
+      // Function to show Statistics content
+      function BuildResume() {
+        document.getElementById('content').innerHTML = `
+            <div class="p-8">
+                <h1 class="text-2xl font-bold">Statistics</h1>
+                <p>This is the content for the Statistics.</p>
+            </div>
+        `;
+      }
+
+      // Function to show Resources content
+      function showResources() {
+        document.getElementById('content').innerHTML = `
+            <div class="p-8">
+                <h1 class="text-2xl font-bold">Resources</h1>
+                <p>This is the content for the Resources.</p>
+            </div>
+        `;
+      }
+
+      // Function to show Contact Us content
+      function showContactUs() {
+        document.getElementById('content').innerHTML = `
+            <div class="p-8">
+                <h1 class="text-2xl font-bold">Contact Us</h1>
+                <p>This is the content for the Contact Us.</p>
+            </div>
+        `;
+      }
+
+      // Function to show Login content
+      function showLogin() {
+        document.getElementById('content').innerHTML = `
+            <div class="p-8">
+                <h1 class="text-2xl font-bold mb-8">Login</h1>
+                <p class="text-xl">You dont have permission to login!</p>
+            </div>
+        `;
+      }
+
+    </script>
+
+
+
+  </div>
+
+  <script>
+
+    function showTable(year) {
+      var tables = document.querySelectorAll('.table-container');
+      tables.forEach(function (table) {
+        table.classList.add('hidden');
+      });
+
+      var table = document.getElementById('table-' + year);
+      table.classList.remove('hidden');
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+  <button class="toggle-theme z-50" onclick="showTheme()">
+    <i id="theme-icon" class="fas fa-sun"></i>
+    <!-- <h3>Theme</h3> -->
+  </button>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- -----------------CONTACT US MAIL---------------------------- -->
+
+  <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+  <div class="elfsight-app-9ccaa9de-fa46-4379-9431-ad58d0b339ac" data-elfsight-app-lazy></div>
+
+  <!-- https://dash.elfsight.com/widget/9ccaa9de-fa46-4379-9431-ad58d0b339ac -->
+
+
+
+  <!-- -----------------INSTAGRAM CHAT------------------------------ -->
+
+  <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+  <div class="elfsight-app-b4b2adc8-cf03-45c3-aa6c-f8f54be3e155" data-elfsight-app-lazy></div>
+
+  <!-- https://dash.elfsight.com/widget/b4b2adc8-cf03-45c3-aa6c-f8f54be3e155 -->
+
+
+
+  <!-- ------------------TELEGRAM CHAT------------------------------- -->
+
+
+  <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+  <div class="elfsight-app-e681f93c-86e6-49a1-b17b-aca8b8e85fde" data-elfsight-app-lazy></div>
+
+  <!-- https://dash.elfsight.com/widget/e681f93c-86e6-49a1-b17b-aca8b8e85fde -->
+
+
+
+
+
+
+
+  <!-- --------------------Footer------------------------ -->
+  <footer class="darkable text-gray-300 body-font footer darkable">
+    <hr class="darkable absolute-top-hr">
+    <div
+      class="darkable  justify-between container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+      <div class="darkable  w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left mt-0">
+        <a
+          class="darkable  flex-wrap title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <img class="darkable  col-span-1 max-h-12 object-contain" src="../Images/logo3-removebg-preview.png"
+            alt="Learning Heaven" width="158" height="48" id="footerlogo">
+          <span class="darkable  ml-3 text-xl">Learning Heaven</span>
+        </a>
+        <p class="darkable  mt-2 text-sm text-gray-500">Code Like A Boss With Learning Heaven.</p>
+      </div>
+      <div
+        class="darkable  flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center justify-end">
+        <div class="darkable lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="darkable  title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Pages</h2>
+          <ul class="darkable  list-none mb-10">
+            <li><a href="/" class="darkable  text-blue-600">Home</a></li>
+            <li><a href="/courses" class="darkable  text-blue-600">Courses</a></li>
+            <li><a href="/resources" class="darkable  text-blue-600">Resources</a></li>
+            <li><a href="/products" class="darkable  text-blue-600">Products</a></li>
+            <li><a href="/contact" class="darkable  text-blue-600">Contact Us</a></li>
+            <li><a href="/placements" class="darkable  text-blue-600">Placements</a>
+            </li>
+          </ul>
+        </div>
+        <div class="darkable  lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="darkable  title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Social Links</h2>
+          <ul class="darkable  list-none mb-10">
+            <li><a class="darkable  text-blue-600">First Link</a></li>
+            <li><a class="darkable  text-blue-600">Second Link</a></li>
+            <li><a class="darkable  text-blue-600">Third Link</a></li>
+            <li><a class="darkable  text-blue-600">Fourth Link</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr class="darkable absolute-top-hr">
+    <div class="darkable bg-gray-100 darkable">
+      <div class="darkable  container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row text-center">
+        <p class="darkable  text-gray-500 text-sm text-center sm:text-left">Made with ❤️ <a
+            href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="darkable  text-gray-600 ml-1"
+            target="_blank">by Somnath Kaushik</a></p>
+        <span class="darkable  inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+          <a class="darkable  text-gray-500">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="darkable w-5 h-5" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+            </svg>
+          </a>
+          <a class="darkable  ml-3 text-gray-500">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="darkable w-5 h-5" viewBox="0 0 24 24">
+              <path
+                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+              </path>
+            </svg>
+          </a>
+          <a class="darkable  ml-3 text-gray-500">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="darkable  w-5 h-5" viewBox="0 0 24 24">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+            </svg>
+          </a>
+          <a class="darkable  ml-3 text-gray-500">
+            <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="0" class="darkable w-5 h-5" viewBox="0 0 24 24">
+              <path stroke="none"
+                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+              <circle cx="4" cy="4" r="2" stroke="none"></circle>
+            </svg>
+          </a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+  <!-- -----------Learning Heaven------------------ -->
+
+  <div id="load">
+    <div>L</div>
+    <div>E</div>
+    <div>A</div>
+    <div>R</div>
+    <div>N</div>
+    <div>I</div>
+    <div>N</div>
+    <div>G</div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div>H</div>
+    <div>E</div>
+    <div>A</div>
+    <div>V</div>
+    <div>E</div>
+    <div>N</div>
+    <!-- <div>L</div>
+      <div>A</div>
+      <div>U</div> -->
+  </div>
+
+
+
+  <!-- ----------------------Cursor------------------------
+
+  <div id="cursor">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+  </div>
+  <script src="../Components/Cursor.js"></script> -->
+
+
+
+  <script src="./Placement_script.js"></script>
+  <script src="/public/globalScript.js"></script>
+
+
+</body>
+
+</html>

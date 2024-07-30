@@ -1,0 +1,101 @@
+.monuBhaiyaOne {
+    margin-top: -62rem;
+}
+
+.active-link {
+    /* border-color: red !important; */
+    color: rgb(0, 166, 255) !important;
+}
+
+.inactive-link {
+    color: rgb(152, 151, 151) !important;
+}
+
+
+
+table {
+    -webkit-text-size-adjust: 100%;
+    /* color: #fff; */
+    font-family: Mulish, sans-serif;
+    font-size: inherit;
+    font-weight: 400;
+    line-height: 1.5rem;
+    text-align: justify;
+    outline: none;
+    box-sizing: inherit;
+    border-collapse: collapse;
+    border-spacing: 0;
+    padding: 0;
+    display: block;
+    overflow-x: auto;
+}
+
+tr, td, th{
+    border: 1px solid rgb(0, 179, 255);
+}
+
+
+
+
+
+/* Dark theme styles */
+.dark {
+    background-color: #1a202c !important;
+    color: #ffffff !important;
+}
+
+.dark .text-blue-600 {
+    color: #1e90ff;
+}
+
+/* .dark hr {
+    border-color: #444;
+} */
+
+/* Styles for the toggle theme button */
+.toggle-theme {
+    position: fixed;
+    bottom: 20px; /* Set distance from bottom */
+    right: 20px;  /* Set distance from right */
+    height: 50px; /* Button height */
+    width: 50px;  /* Button width */
+    background-color: #f0f0f0; /* Button background color */
+    border: none; /* Remove default button border */
+    border-radius: 50%; /* Rounded corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.dark .toggle-theme {
+    background-color: #333; /* Dark mode button background color */
+}
+
+.toggle-theme i {
+    font-size: 24px; /* Font Awesome icon size */
+    transition: color 0.3s ease; /* Smooth transition for icon color */
+}
+
+.dark .toggle-theme i {
+    color: #f0f0f0; /* Dark mode icon color */
+}
+
+
+.absolute-top-hr {
+    width: 100%;
+    border-color: white;
+}
+
+/* Additional dark mode styles for other elements */
+.dark .darkable {
+    background-color: #1a202c;
+    color: #ffffff;
+}
+
+.dark .darkable .darkhower:hover{
+    background-color: #025e7c !important;
+    
+}

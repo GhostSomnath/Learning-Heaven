@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adding Logo to web page  -->
+    <link rel="icon" href="../Images/logo3-removebg-preview.png">
+
+    <!-- Linking Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Link to Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    
+    <!-- Linking other css files -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="Resources.css">
+    <link rel="stylesheet" href="../Components/Navbar.css">
+    <link rel="stylesheet" href="../Components/Banner.css">
+    <link rel="stylesheet" href="../Components/Footer.css">
+    <link rel="stylesheet" href="../Components/Cursor.css">
+    <link rel="stylesheet" href="/public/style.css">
+
+
+    <title>Learning Heaven</title>
+    <style>
+        body::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="dimskyblue">
+
+
+    <%- include('../Components/MainNavbar.ejs') %>
+
+    
+
+
+
+
+
+
+
+
+
+
+    <!-- -----------------------------HERO 1------------------------------------------ -->
+    <section class="HeroOne text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+            <div
+                class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+                <h1 class="darkable title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Unlock a World of Resources
+                    <br class="darkable hidden lg:inline-block">Empowering You with Knowledge and Tools
+                </h1>
+                <p class="darkable mb-8 leading-relaxed">Welcome to CB Resources, your ultimate destination for a curated
+                    collection of resources to enhance your knowledge, skills, and productivity. Whether you're a
+                    student, a professional, or an enthusiast, discover a wealth of articles, tutorials, videos, and
+                    more to fuel your curiosity and drive your success.</p>
+                <!-- <div class="flex justify-center">
+                    <button class="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:skyblue rounded text-lg">Button</button>
+                    <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+                </div> -->
+            </div>
+            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+                <img class="object-cover object-center rounded" alt="hero" src="../Images/image2.jpg">
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+<!-- -----------------------------HERO 2------------------------------------------ -->
+
+<h1 class="darkable text-xl font-semibold text-center text-gray-600" id="languageTitle">Download the Free Resources</h1>
+
+<!-- Section with list of programming languages -->
+<section class="container mx-auto py-8">
+    <ul class="darkable darkhower grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 align-middle">
+        <li class="darkable darkhower boder language bg-white p-4 rounded-lg shadow-md transition duration-300 hower text-gray-600 text-center"
+            onclick="showPopup('JavaScript')">JavaScript</li>
+        <li class="darkable darkhower boder language bg-white p-4 rounded-lg shadow-md transition duration-300 hower text-gray-600 text-center"
+            onclick="showPopup('Python')">Python</li>
+        <li class="darkable darkhower boder language bg-white p-4 rounded-lg shadow-md transition duration-300 hower text-gray-600 text-center"
+            onclick="showPopup('Java')">Java</li>
+        <li class="darkable darkhower boder language bg-white p-4 rounded-lg shadow-md transition duration-300 hower text-gray-600 text-center"
+            onclick="showPopup('C++')">C++</li>
+    </ul>
+</section>
+
+<!-- Popup for viewing notes -->
+<div class="darkable z-30 notes-popup fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
+    <div class="darkable boder bg-white p-8 rounded-lg shadow-md max-w-md">
+        <div class="flex justify-between items-center mb-4 ">
+            <h2 class="text-xl font-semibold " id="popupLanguageTitle">JavaScript Notes</h2>
+            <h3>(Preview Sample Page)</h3>
+            <button class="close-btn" onclick="closePopup()">
+                <svg class="w-6 h-6 text-gray-700 hover:text-gray-900" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <div class="pdf-viewer hidden" id="pdfViewer"></div>
+        <div class="mt-4 flex justify-between mt-16">
+            <button class="skyblue darkable darkhower boder  text-white px-4 py-2 rounded hover:bg-blue-600 mx-5"
+                onclick="viewNotes()">View
+                Notes</button>
+            <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mx-5"
+                onclick="downloadPDF()">Download PDF</button>
+
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+<script>
+    var pdfDoc = null;
+    var pageNum = 1;
+    var pageRendering = false;
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
+
+    function showPopup(language) {
+        var popup = document.querySelector('.notes-popup');
+        popup.style.display = 'flex';
+        // popup.style.width = "300px";
+        var heading = document.getElementById('popupLanguageTitle');
+        heading.textContent = language + ' Notes';
+    }
+
+    function closePopup() {
+        var popup = document.querySelector('.notes-popup');
+        popup.style.display = 'none';
+        location.reload();
+    }
+
+    function viewNotes() {
+        var pdfViewer = document.getElementById('pdfViewer');
+
+        pdfViewer.classList.remove('hidden');
+
+        pdfViewer.innerHTML = '';
+
+        var url = getPDFUrl(); // Get URL of the PDF document based on selected language
+        pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
+            pdfDoc = pdfDoc_;
+            renderPage(pageNum);
+        });
+
+    }
+
+    function downloadPDF() {
+        var url = getPDFUrl(); // Get URL of the PDF document based on selected language
+        var filename = document.getElementById('popupLanguageTitle').textContent.trim().replace(' ', '_') + '.pdf';
+        fetch(url)
+            .then(response => response.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(new Blob([blob]));
+                const link = document.createElement('a');
+                link.href = url;
+                link.setAttribute('download', filename);
+                document.body.appendChild(link);
+                link.click();
+                link.parentNode.removeChild(link);
+            });
+    }
+
+    function renderPage(num) {
+        pageRendering = true;
+        pdfDoc.getPage(num).then(function (page) {
+            var viewport = page.getViewport({ scale: 1 });
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+            var renderContext = {
+                canvasContext: ctx,
+                viewport: viewport
+            };
+
+            var renderTask = page.render(renderContext);
+            renderTask.promise.then(function () {
+                pageRendering = false;
+                var pdfViewer = document.getElementById('pdfViewer');
+                pdfViewer.appendChild(canvas);
+            });
+        });
+
+    }
+
+    function getPDFUrl() {
+        var language = document.getElementById('popupLanguageTitle').textContent.split(' ')[0]; // Get the selected language
+        // Map language to respective PDF URLs (Replace with your actual PDF URLs)
+        var pdfUrls = {
+            'JavaScript': '../Resource_Pdfs/Booths to Stack .pdf',
+            'Python': '../Resource_Pdfs/register microoperations_organized.pdf',
+            'Java': '../Resource_Pdfs/physics notes.pdf',
+            'C++': '../Resource_Pdfs/karan CO notes 1.pdf'
+        };
+        return pdfUrls[language];
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- -----------------Resource 1-------------------------------- -->
+    <hr class="darkable absolute-top-hr">
+    <section class=" darkable text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-col text-center w-full mb-20">
+                <h2 class="text-xs textskyblue tracking-widest font-medium title-font mb-1">Explore Niche Content Gems
+                </h2>
+                <h1 class=" darkable sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Uncover Hidden Gems</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Dive into our treasure trove of lesser-known
+                    resources that offer unique perspectives and valuable insights. From niche blogs to underground
+                    podcasts, we've curated a collection of hidden gems waiting to be discovered.</p>
+            </div>
+            <div class="flex flex-wrap resBigBox boder">
+                <div class="hover:bg-white darkable boder resBox xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+                    <h2 class=" darkable text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">Academic Insights</h2>
+                    <p class=" darkable leading-relaxed text-base mb-4">Access study guides, research papers, and online courses
+                        for academic success.</p>
+                    <a class="textskyblue inline-flex items-center">Explore Now
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="hover:bg-white darkable boder resBox xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+                    <h2 class=" darkable text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">Coding Essentials</h2>
+                    <p class=" darkable leading-relaxed text-base mb-4">Dive into fundamental coding concepts, algorithms, and
+                        data structures.</p>
+                    <a class="textskyblue inline-flex items-center">Explore Now
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="hover:bg-white darkable boder resBox xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+                    <h2 class=" darkable text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">Development Tools</h2>
+                    <p class=" darkable leading-relaxed text-base mb-4">Explore tutorials, guides, and projects using popular
+                        development tools and languages.</p>
+                    <a class="textskyblue inline-flex items-center">Explore Now
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="hover:bg-white darkable boder resBox xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+                    <h2 class=" darkable text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">Tech Innovations</h2>
+                    <p class=" darkable leading-relaxed text-base mb-4">Stay ahead with updates on emerging technologies, trends,
+                        and industry insights.</p>
+                    <a class="textskyblue inline-flex items-center">Explore Now
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="darkable absolute-top-hr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ------------Resource 2------------------ -->
+
+
+
+    <section class="darkable text-gray-600 body-font mb-400 mt-16">
+        <h1 class="darkable text-center sm:text-3xl text-4xl  font-bold title-font mb-4 text-gray-900">Projects</h1>
+        <div class="container px-5 py-24 mx-auto">
+
+            <div class="flex flex-wrap -m-4 mb-8">
+                <div class="darkable darkhower lg:w-1/4 md:w-1/2 p-4 w-full hower boder">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                            src="../Images/calculator.jpg">
+                    </a>
+                    <div class="mt-4 ">
+                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100 ">HTML</a>
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100">CSS</a>
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100">JS</a>
+                        </h3>
+                        <h2 class="text-gray-400 title-font text-lg font-medium mb-6">Calculator</h2>
+                        <div class="flex mb-4 -mt-4">
+                            <div class="flex-1 text-gray-700 text-center text-xs skyblue px-4 py-2 m-2">Preview</div>
+
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-white px-4 py-2 m-2">View Code</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="darkable darkhower lg:w-1/4 md:w-1/2 p-4 w-full hower boder">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                            src="https://dummyimage.com/420x260">
+                    </a>
+                    <div class="mt-4 ">
+                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100 ">HTML</a>
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100">CSS</a>
+                        </h3>
+                        <h2 class="text-gray-400 title-font text-lg font-medium mb-6">The Catalyzer</h2>
+                        <div class="flex mb-4 -mt-4">
+                            <div class="flex-1 text-gray-700 text-center text-xs skyblue px-4 py-2 m-2">Preview</div>
+
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-white px-4 py-2 m-2">View Code</div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="darkable darkhower lg:w-1/4 md:w-1/2 p-4 w-full hower boder">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                            src="https://dummyimage.com/420x260">
+                    </a>
+                    <div class="mt-4 ">
+                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100 ">HTML</a>
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100">CSS</a>
+                        </h3>
+                        <h2 class="text-gray-400 title-font text-lg font-medium mb-6">The Catalyzer</h2>
+                        <div class="flex mb-4 -mt-4">
+                            <div class="flex-1 text-gray-700 text-center text-xs skyblue px-4 py-2 m-2">Preview</div>
+
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-white px-4 py-2 m-2">View Code</div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="darkable darkhower lg:w-1/4 md:w-1/2 p-4 w-full hower boder">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                            src="https://dummyimage.com/420x260">
+                    </a>
+                    <div class="mt-4 ">
+                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100 ">HTML</a>
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100">CSS</a>
+                        </h3>
+                        <h2 class=" text-gray-400 title-font text-lg font-medium mb-6">The Catalyzer</h2>
+                        <div class="flex mb-4 -mt-4">
+                            <div class="flex-1 text-gray-700 text-center text-xs skyblue px-4 py-2 m-2">Preview</div>
+
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-white px-4 py-2 m-2">View Code</div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="darkable darkhower lg:w-1/4 md:w-1/2 p-4 w-full hower boder">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                            src="https://dummyimage.com/420x260">
+                    </a>
+                    <div class="mt-4 ">
+                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100 ">HTML</a>
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100">CSS</a>
+                        </h3>
+                        <h2 class=" text-gray-400 title-font text-lg font-medium mb-6">The Catalyzer</h2>
+                        <div class="flex mb-4 -mt-4">
+                            <div class="flex-1 text-gray-700 text-center text-xs skyblue px-4 py-2 m-2">Preview</div>
+
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-white px-4 py-2 m-2">View Code</div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="darkable darkhower lg:w-1/4 md:w-1/2 p-4 w-full hower boder">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                            src="https://dummyimage.com/420x260">
+                    </a>
+                    <div class="mt-4 ">
+                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100 ">HTML</a>
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100">CSS</a>
+                        </h3>
+                        <h2 class=" text-gray-400 title-font text-lg font-medium mb-6">The Catalyzer</h2>
+                        <div class="flex mb-4 -mt-4">
+                            <div class="flex-1 text-gray-700 text-center text-xs skyblue px-4 py-2 m-2">Preview</div>
+
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-white px-4 py-2 m-2">View Code</div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="darkable darkhower lg:w-1/4 md:w-1/2 p-4 w-full hower boder">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                            src="https://dummyimage.com/420x260">
+                    </a>
+                    <div class="mt-4 ">
+                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100 ">HTML</a>
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100">CSS</a>
+                        </h3>
+                        <h2 class=" text-gray-400 title-font text-lg font-medium mb-6">The Catalyzer</h2>
+                        <div class="flex mb-4 -mt-4">
+                            <div class="flex-1 text-gray-700 text-center text-xs skyblue px-4 py-2 m-2">Preview</div>
+
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-white px-4 py-2 m-2">View Code</div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="darkable darkhower lg:w-1/4 md:w-1/2 p-4 w-full hower boder">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                            src="https://dummyimage.com/420x260">
+                    </a>
+                    <div class="mt-4 ">
+                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100 ">HTML</a>
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100">CSS</a>
+                        </h3>
+                        <h2 class="text-gray-400 title-font text-lg font-medium mb-6">The Catalyzer</h2>
+                        <div class="flex mb-4 -mt-4">
+                            <div class="flex-1 text-gray-700 text-center text-xs skyblue px-4 py-2 m-2">Preview</div>
+
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-white px-4 py-2 m-2">View Code</div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+            <div class="darkable flex flex-wrap -m-4 text-center language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100 mb-4 mt-4 white-glow-shadow">
+                <div class="darkable p-4 sm:w-1/4 w-1/2 box-shadow">
+                    <h2 class="darkable title-font font-medium sm:text-4xl text-3xl text-gray-900">5.2K</h2>
+                    <p class="leading-relaxed">Views</p>
+                </div>
+                <div class="darkable p-4 sm:w-1/4 w-1/2 box-shadow">
+                    <h2 class="darkable title-font font-medium sm:text-4xl text-3xl text-gray-900">6.8K</h2>
+                    <p class="leading-relaxed">Preview</p>
+                </div>
+                <div class="darkable p-4 sm:w-1/4 w-1/2 box-shadow">
+                    <h2 class="darkable title-font font-medium sm:text-4xl text-3xl text-gray-900">500+</h2>
+                    <p class="leading-relaxed">Downloads</p>
+                </div>
+                <div class="darkable p-4 sm:w-1/4 w-1/2 box-shadow">
+                    <h2 class="darkable title-font font-medium sm:text-4xl text-3xl text-gray-900">8</h2>
+                    <p class="leading-relaxed">Projects</p>
+                </div>
+            </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <%- include('../partials/footer.ejs') %>
+
+
+
+
+
+
+
+    
+    <script src="/public/globalScript.js"></script>
+
+    
+</body>
+
+</html>

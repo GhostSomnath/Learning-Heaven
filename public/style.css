@@ -1,0 +1,88 @@
+#codeSection {
+    margin-top: -60rem;
+}
+
+.shopingmarg{
+  margin-top: -66rem !important;
+}
+.shopingmargbotm{
+  margin-bottom: -60rem !important;
+}
+
+* {
+    margin: 0 0;
+
+}
+
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+}
+
+
+
+
+
+/* Dark theme styles */
+.dark {
+    background-color: #1a202c !important;
+    color: #ffffff !important;
+  }
+  
+  .dark .text-blue-600 {
+    color: #1e90ff;
+  }
+  
+  /* .dark hr {
+    border-color: #444;
+  } */
+  
+  /* Styles for the toggle theme button */
+  .toggle-theme {
+    position: fixed;
+    bottom: 20px; /* Set distance from bottom */
+    right: 20px;  /* Set distance from right */
+    height: 50px; /* Button height */
+    width: 50px;  /* Button width */
+    background-color: #f0f0f0; /* Button background color */
+    border: none; /* Remove default button border */
+    border-radius: 50%; /* Rounded corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+  
+  .dark .toggle-theme {
+    background-color: #333; /* Dark mode button background color */
+  }
+  
+  .toggle-theme i {
+    font-size: 24px; /* Font Awesome icon size */
+    transition: color 0.3s ease; /* Smooth transition for icon color */
+  }
+  
+  .dark .toggle-theme i {
+    color: #f0f0f0; /* Dark mode icon color */
+  }
+  
+  
+  .absolute-top-hr {
+    width: 100%;
+    border-color: white;
+  }
+  
+  /* Additional dark mode styles for other elements */
+  .dark .darkable {
+    background-color: #1a202c;
+    color: #ffffff;
+  }
+  
+  .dark .darkable .darkhower:hover{
+    background-color: #025e7c !important;
+    
+  }

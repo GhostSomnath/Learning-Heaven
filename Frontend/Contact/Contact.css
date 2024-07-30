@@ -1,0 +1,119 @@
+body{
+  background-image: url("https://images.unsplash.com/photo-1488998427799-e3362cec87c3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGNvbnRhY3QlMjB1c3xlbnwwfHwwfHx8MA%3D%3D");
+  background-repeat: no-repeat;
+    background-size: 100% 35%;
+}
+
+  
+
+.ContactUS{
+    margin-top: -25rem;
+}
+
+
+
+/* .parallax {
+    height: 100%; 
+  
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  } */
+  
+  /* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+  @media only screen and (max-device-width: 1366px) {
+    .parallax {
+      background-attachment: scroll;
+    }
+  }
+
+
+/* Dark Mode */
+body.dark {
+  background-color: #1f2937;
+  color: #f3f4f6;
+}
+
+body.dark .navbar {
+  background-color: #111827;
+  color: #f3f4f6;
+}
+
+/* Light Mode */
+body.light {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+body.light .navbar {
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+
+
+
+
+/* Dark theme styles */
+.dark {
+  background-color: #1a202c !important;
+  color: #ffffff !important;
+}
+
+.dark .text-blue-600 {
+  color: #1e90ff;
+}
+
+/* .dark hr {
+  border-color: #444;
+} */
+
+/* Styles for the toggle theme button */
+.toggle-theme {
+  position: fixed;
+  bottom: 20px; /* Set distance from bottom */
+  right: 20px;  /* Set distance from right */
+  height: 50px; /* Button height */
+  width: 50px;  /* Button width */
+  background-color: #f0f0f0; /* Button background color */
+  border: none; /* Remove default button border */
+  border-radius: 50%; /* Rounded corners */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.dark .toggle-theme {
+  background-color: #333; /* Dark mode button background color */
+}
+
+.toggle-theme i {
+  font-size: 24px; /* Font Awesome icon size */
+  transition: color 0.3s ease; /* Smooth transition for icon color */
+}
+
+.dark .toggle-theme i {
+  color: #f0f0f0; /* Dark mode icon color */
+}
+
+
+.absolute-top-hr {
+  width: 100%;
+  border-color: white;
+}
+
+/* Additional dark mode styles for other elements */
+.dark .darkable {
+  background-color: #1a202c;
+  color: #ffffff;
+}
+
+.dark .darkable .darkhower:hover{
+  background-color: #025e7c !important;
+  
+}

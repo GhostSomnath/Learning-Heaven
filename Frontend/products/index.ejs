@@ -1,0 +1,156 @@
+<% layout('layouts/boilerplate') -%>
+
+<% function truncateDescription(desc) { 
+     let words = desc.split(' '); 
+     if (words.length > 20) { 
+         return words.slice(0, 20).join(' ') + '...'; 
+     } 
+     return desc; 
+} %>
+
+<section class="container mx-auto px-4 py-8 shopingmarg">
+  <%- include('../partials/flash') %>
+  
+  <section id="heading" class="mb-6 flex justify-between items-center">
+    <h4 class="text-4xl font-bold flex items-center">
+      
+      <i class="fab fa-shopify mr-4"></i>Learning Products (Virtual)
+    </h4>
+    
+    <button id="wishlist-button" class="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600">
+      View Wishlist
+    </button>
+    
+  </section>
+
+  <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <% for(let product of products) { %>
+      <div class="relative bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+        <img src="<%=product.img%>" class="w-full h-48 object-cover" alt="item image">
+        <span class="absolute top-2 left-2 bg-gray-100 text-gray-800 px-3 py-1 text-sm rounded-full">
+          <%=product.avgRating%> &star; | <%=product.reviews.length%>
+        </span>
+        <div class="p-4 flex-grow">
+          <h5 class="text-lg font-semibold flex justify-between items-center mb-4">
+            <span class="truncate overflow-hidden text-ellipsis whitespace-nowrap w-2/3"><%= product.name %></span>
+            <span class="cursor-pointer text-red-500 wishlist-toggle" data-product-id="<%=product._id%>">
+              <% if(currentUser && currentUser.wishList.includes(product._id)) { %>
+                <i class="fas fa-heart"></i>
+              <% } else { %>
+                <i class="far fa-heart"></i>
+              <% } %>
+            </span>
+          </h5>
+          <p class="text-gray-600 mb-4"><%= truncateDescription(product.desc) %></p>
+          <% if(product.reviews.length) { %>
+            <p class="text-gray-500 mb-2"><%=product.reviews.length%> reviews</p>
+          <% } else { %>
+            <p class="text-gray-500 mb-2">No reviews</p>
+          <% } %>
+          <h6 class="text-lg font-semibold mb-4">
+            <span class="line-through text-gray-500">Rs.<%= product.price*2 %></span>
+            Rs.<%= product.price %>
+            <span class="text-yellow-500 text-sm">(50% OFF)</span>
+          </h6>
+        </div>
+        <a href="/products/<%=product._id%>" class="block -mt-3 mb-4 mx-2 my-2 text-center bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600">View Now</a>
+      </div>
+    <% } %>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const wishlistToggles = document.querySelectorAll('.wishlist-toggle');
+    const wishlistButton = document.getElementById('wishlist-button');
+    const productGrid = document.getElementById('product-grid');
+    let showingWishlist = false;
+    const allProducts = Array.from(productGrid.children);
+  
+    wishlistToggles.forEach(toggle => {
+      toggle.addEventListener('click', function() {
+        const productId = this.getAttribute('data-product-id');
+        const icon = this.querySelector('i');
+  
+        fetch('/wishlist/toggle', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ productId })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            icon.classList.toggle('fas');
+            icon.classList.toggle('far');
+          } else {
+            console.error('Error toggling wishlist:', data.error);
+          }
+        })
+        .catch(error => console.error('Error:', error));
+      });
+    });
+  
+    wishlistButton.addEventListener('click', function() {
+      if (showingWishlist) {
+        productGrid.innerHTML = '';
+        allProducts.forEach(product => productGrid.appendChild(product));
+        wishlistButton.textContent = 'View Wishlist';
+        showingWishlist = false;
+      } else {
+        fetch('/wishlist/products')
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              productGrid.innerHTML = '';
+              data.products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'relative bg-white shadow-md rounded-lg overflow-hidden flex flex-col';
+                productCard.innerHTML = `
+                  <img src="${product.img}" class="w-full h-48 object-cover" alt="item image">
+                  <span class="absolute top-2 left-2 bg-gray-100 text-gray-800 px-3 py-1 text-sm rounded-full">
+                    ${product.avgRating} &star; | ${product.reviews.length}
+                  </span>
+                  <div class="p-4 flex-grow">
+                    <h5 class="text-lg font-semibold flex justify-between items-center mb-4">
+                      <span class="truncate overflow-hidden text-ellipsis whitespace-nowrap w-2/3">${product.name}</span>
+                      <span class="cursor-pointer text-red-500 wishlist-toggle" data-product-id="${product._id}">
+                        <i class="fas fa-heart"></i>
+                      </span>
+                    </h5>
+                    <p class="text-gray-600 mb-4">${truncateDescription(product.desc)}</p>
+                    <p class="text-gray-500 mb-2">${product.reviews.length} reviews</p>
+                    <h6 class="text-lg font-semibold mb-4">
+                      <span class="line-through text-gray-500">Rs.${product.price * 2}</span>
+                      Rs.${product.price}
+                      <span class="text-yellow-500 text-sm">(50% OFF)</span>
+                    </h6>
+                  </div>
+                  <a href="/products/${product._id}" class="block -mt-3 mb-4 mx-2 my-2 text-center bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600">View Now</a>
+                `;
+                productGrid.appendChild(productCard);
+              });
+              wishlistButton.textContent = 'Back';
+              showingWishlist = true;
+            } else {
+              console.error('Error fetching wishlist products:', data.error);
+            }
+          })
+          .catch(error => console.error('Error:', error));
+      }
+    });
+  });
+  
+  function truncateDescription(desc) {
+    let words = desc.split(' ');
+    if (words.length > 20) {
+      return words.slice(0, 20).join(' ') + '...';
+    }
+    return desc;
+  }
+  
+</script>
+
+<script src="/js/common.js"></script>
+<script src="/public/globalScript.js"></script>

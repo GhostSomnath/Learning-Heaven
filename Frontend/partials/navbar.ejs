@@ -1,0 +1,122 @@
+<!-- Navbar -->
+<nav class="darkable skyblue p-4 darkable ">
+  <div class="darkable container mx-auto flex justify-between items-center">
+    <!-- Logo -->
+    <a href="#" class="flex items-center text-white text-xl font-bold darkable">
+      <img src="../Images/DarkNav.png" alt="Logo" class="darkable w-52 h-8 mr-2" id="nav-logo step-one">
+    </a>
+
+    <!-- Navbar Links -->
+    <div class="hidden lg:flex lg:items-center lg:space-x-6 mx-auto">
+      <ul class="flex space-x-6">
+        <li><a href="/" class="darkable  nav-link text-white ">Home</a></li>
+        <li><a href="/courses" class="darkable  nav-link text-white ">Courses</a></li>
+        <li><a href="/resources" class="darkable  nav-link text-white ">Resources</a></li>
+        <li><a href="/contact" class="darkable  nav-link text-white ">Contact</a></li>
+        <li><a href="/products" class="darkable  nav-link text-white ">Products</a></li>
+        <li><a href="/Placements" class="darkable  nav-link text-white ">Placements</a></li>
+        <li><a href="/Compiler" class="darkable  nav-link text-white ">Compiler</a></li>
+
+        <% if (currentUser && currentUser.role==='seller' ) { %>
+          <li><a href="/products/new" class="nav-link text-white py-2" tabindex="-1" aria-disabled="true">New</a></li>
+          <% } %>
+      </ul>
+    </div>
+
+    <!-- Hamburger Menu Button -->
+    <button class="text-white focus:outline-none lg:hidden" id="menu-btn">
+      <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path id="menu-icon-line1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16"></path>
+        <path id="menu-icon-line2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16"></path>
+        <path id="menu-icon-line3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 18h16"></path>
+      </svg>
+    </button>
+
+    <!-- Right Side Links -->
+    <div class="flex items-center space-x-4 text-white ml-auto">
+      <% if (!currentUser) { %>
+        <a href="/login" class="nav-link">Login</a>
+        <% } else { %>
+          <div class="flex items-center space-x-2">
+            <span class="nav-link capitalize">Hello <%= currentUser.username %></span>
+            <a href="/user/cart" class="nav-link flex items-center">
+              <i class="fas fa-shopping-cart"></i>
+              <sup><span class="badge bg-red-600">
+                  <%= currentUser.cart.length %>
+                </span></sup>
+            </a>
+            <a href="/logout" class="nav-link">Logout</a>
+          </div>
+          <% } %>
+    </div>
+  </div>
+</nav>
+
+<!-- Responsive Menu -->
+<div class="lg:hidden hidden mt-10 " id="menu">
+  <ul class="bg-gray-800 p-4 text-center space-y-2">
+    <li><a href="/" class="darkable block text-white py-2">Home</a></li>
+    <li><a href="/courses" class="darkable block text-white py-2">Courses</a></li>
+    <li><a href="/resources" class="darkable block text-white py-2">Resources</a></li>
+    <li><a href="/contact" class="darkable block text-white py-2">Contact</a></li>
+    <li><a href="/products" class="darkable block text-white py-2">Products</a></li>
+    <li><a href="/placements" class="darkable block text-white py-2">Placements</a></li>
+    <li><a href="/Compiler" class="darkable block text-white py-2">Compiler</a></li>
+
+    <% if (currentUser && currentUser.role==='seller' ) { %>
+      <li><a href="/products/new" class="block text-white py-2" tabindex="-1" aria-disabled="true">New</a></li>
+      <% } %>
+  </ul>
+</div>
+
+<script>
+  // Toggle menu visibility with animation and change icon
+  document.getElementById('menu-btn').addEventListener('click', function () {
+    var menu = document.getElementById('menu');
+    menu.classList.toggle('hidden');
+
+    // Rotate hamburger icon and change its appearance
+    var icon = document.getElementById('menu-icon');
+    icon.classList.toggle('rotate');
+
+    var line1 = document.getElementById('menu-icon-line1');
+    var line2 = document.getElementById('menu-icon-line2');
+    var line3 = document.getElementById('menu-icon-line3');
+
+    if (menu.classList.contains('hidden')) {
+      line1.setAttribute('d', 'M4 6h16');
+      line2.setAttribute('d', 'M4 12h16');
+      line3.setAttribute('d', 'M4 18h16');
+    } else {
+      line1.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+      line2.setAttribute('d', 'M6 6l12 12');
+      line3.setAttribute('d', 'M6 6l12 12');
+    }
+  });
+</script>
+
+
+
+
+<!-- Banner -->
+<div class="darkable banner " id="step-two">
+  <p>Contact Dr. Somnath Kaushik For Consultancy On Health Support Plans <a
+      href="mailto:somnath.kaushik_cs21@gla.ac.in">
+      <d>somnath.kaushik_cs21@gla.ac.in</d>
+    </a></p>
+  <button id="closeBanner">X</button>
+</div>
+
+<!-- Content (for spacing) -->
+<div style="height: 1000px;">
+  <!-- This is just to create some space so the banner doesn't cover content -->
+</div>
+
+<script>
+  // JavaScript to handle banner removal
+  document.getElementById('closeBanner').addEventListener('click', function () {
+    var banner = document.querySelector('.banner');
+    banner.style.display = 'none';
+  });
+</script>

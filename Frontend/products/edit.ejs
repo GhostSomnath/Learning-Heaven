@@ -1,0 +1,34 @@
+<% layout('layouts/boilerplate') -%>
+
+<div class="flex justify-center">
+    <div class="w-full max-w-md mx-4 sm:mx-6 lg:mx-8">
+        <form action="/products/<%=product._id%>?_method=PATCH" class="space-y-4" method="POST" novalidate>
+            <div>
+                <label class="block text-gray-700 text-sm font-medium mb-2" for="name">Name:</label>
+                <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" type="text" name="name" id="name" placeholder="Product Name" value="<%=product.name%>" required>
+                <div class="text-green-600 mt-1 text-sm">Looks good!</div>
+            </div>
+            <div>
+                <label for="img" class="block text-gray-700 text-sm font-medium mb-2">Image URL</label>
+                <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" type="text" name="img" id="img" placeholder="Product Image URL" value="<%=product.img%>" required>
+                <div class="text-green-600 mt-1 text-sm">Looks good!</div>
+            </div>
+        
+            <div>
+                <label for="price" class="block text-gray-700 text-sm font-medium mb-2">Price</label>
+                <div class="flex items-center border border-gray-300 rounded-lg">
+                    <span class="bg-gray-100 px-3 py-2 text-gray-500">$</span>
+                    <input type="text" name="price" class="w-full px-3 py-2 border-0 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Price" aria-label="Price" value="<%=product.price%>" required>
+                </div>  
+                <div class="text-green-600 mt-1 text-sm">Looks good!</div>
+            </div>
+        
+            <div>
+                <label class="block text-gray-700 text-sm font-medium mb-2" for="desc">Description</label>
+                <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" name="desc" id="desc" rows="5" required><%=product.desc%></textarea>
+                <div class="text-green-600 mt-1 text-sm">Looks good!</div>
+            </div>
+            <button type="submit" class="w-full bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600">Save</button>
+        </form>
+    </div>
+</div>

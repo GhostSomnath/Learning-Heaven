@@ -1,0 +1,125 @@
+
+
+
+
+
+.HeroOne{
+    margin-top: -65rem;
+}
+
+*{
+    margin: 0 0;
+    
+}
+
+body {
+    position: relative;
+    /* cursor: none; */
+    height: 100%;
+    width: 100%;
+    /* overflow-wrap: normal; */
+    
+  }
+
+/* .hidden { */
+    /* opacity: 0; */
+    /* pointer-events: none; */
+/* } */
+ /* Additional custom styles */
+ .language {
+    cursor: pointer;
+}
+
+.notes-popup {
+    display: none;
+}
+
+.pdf-viewer {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.close-btn {
+    cursor: pointer;
+}
+
+#languageTitle{
+    margin-top: -5rem;
+}
+
+.resBox {
+    /* border: 2px solid rgb(0, 153, 255); */
+    padding: 20px;
+    background-color: rgb(210, 238, 255);
+}
+/* .resBigBox :hover{
+    background-color: rgb(255, 255, 255);
+} */
+
+
+.white-glow-shadow {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
+  }
+
+
+/* Dark theme styles */
+.dark {
+    background-color: #1a202c !important;
+    color: #ffffff !important;
+}
+
+.dark .text-blue-600 {
+    color: #1e90ff;
+}
+
+/* .dark hr {
+    border-color: #444;
+} */
+
+/* Styles for the toggle theme button */
+.toggle-theme {
+    position: fixed;
+    bottom: 20px; /* Set distance from bottom */
+    right: 20px;  /* Set distance from right */
+    height: 50px; /* Button height */
+    width: 50px;  /* Button width */
+    background-color: #f0f0f0; /* Button background color */
+    border: none; /* Remove default button border */
+    border-radius: 50%; /* Rounded corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.dark .toggle-theme {
+    background-color: #333; /* Dark mode button background color */
+}
+
+.toggle-theme i {
+    font-size: 24px; /* Font Awesome icon size */
+    transition: color 0.3s ease; /* Smooth transition for icon color */
+}
+
+.dark .toggle-theme i {
+    color: #f0f0f0; /* Dark mode icon color */
+}
+
+
+.absolute-top-hr {
+    width: 100%;
+    border-color: white;
+}
+
+/* Additional dark mode styles for other elements */
+.dark .darkable {
+    background-color: #1a202c;
+    color: #ffffff;
+}
+
+.dark .darkable .darkhower:hover{
+    background-color: #025e7c !important;
+    
+}

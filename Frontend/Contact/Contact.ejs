@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adding Logo to web page  -->
+    <link rel="icon" type="image/x-icon" href="../Images/logo3-removebg-preview.png">
+    <!-- Adding Logo to web page  -->
+    <!-- Link to Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Linking other css files -->
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="Contact.css">
+    <link rel="stylesheet" href="../Components/Navbar.css">
+    <link rel="stylesheet" href="../Components/Banner.css">
+    <link rel="stylesheet" href="../Components/Footer.css">
+    <link rel="stylesheet" href="../Components/Cursor.css">
+
+    <title>Learning Heaven</title>
+    <style>
+        body::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body class="">
+
+
+
+
+    <%- include('../Components/MainNavbar.ejs') %>
+
+
+
+
+
+
+
+
+
+        <!-- ----------------Contact Form------------------ -->
+
+
+        <section class="darkable ContactUS text-gray-600 body-font relative">
+            <div class="darkable absolute inset-0 bg-gray-300">
+                <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map"
+                    scrolling="no"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3259.0658441903875!2d77.5909207653096!3d27.605684958059626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39736ce47bffc039%3A0xfe5fc3da92c6341!2sGLA%20University!5e0!3m2!1sen!2sin!4v1707684105852!5m2!1sen!2sin"
+                    width="600" height="450" style="filter: grayscale(0) contrast(1.2) opacity(0.4);" allowfullscreen=""
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+            <form action="https://formspree.io/f/mwkgokqv" method="POST">
+                <div class="darkable container px-5 py-24 mx-auto flex">
+                    <div
+                        class="darkable lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">
+                        <h2 class="text-gray-900 text-lg mb-1 font-medium title-font text-center">
+                            <c>Contact US</c>
+                        </h2>
+                        <p class="darkable leading-relaxed mb-5 text-gray-600 text-center">Kindly fill the form. We will
+                            try
+                            to
+                            connect with you as soon as possible.</p>
+                        <div class="darkable relative mb-4">
+                            <label for="email" class="darkable leading-7 text-sm text-gray-600">Email</label>
+                            <input type="email" id="email" name="email"
+                                class="darkable w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        </div>
+                        <div class="darkable relative mb-4">
+                            <label for="message" class="darkable leading-7 text-sm text-gray-600">Message</label>
+                            <textarea id="message" name="message"
+                                class="darkable w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                        </div>
+                        <button
+                            class="darkable darkhower text-white skyblue border-0 py-2 px-6 focus:outline-none hower rounded text-lg"
+                            type="submit">Submit</button>
+                        <p class="darkable  text-xs text-gray-500 mt-3 text-center">Have A Great And Wounderful Day ❣️.
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+
+
+        <!-- <div class="visme_d" data-title="Untitled Project" data-url="g7qrn16w-untitled-project" data-domain="forms" data-full-page="false" data-min-height="500px" data-form-id="17126"></div><script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script> -->
+
+
+
+
+
+
+
+
+        <!-- ----------------Contributers---------------- -->
+
+
+        <div class="textskyblue">
+            <h1 class="text-center font-bold text-3xl mt-5">Contributers :</h1>
+            <ul role="list" class="divide-y divide-gray-100 mx-16">
+                <li class="flex justify-between gap-x-6 py-5 ">
+                    <div class="flex min-w-0 gap-x-4">
+                        <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="../Images/Somnath_Kaushik.jpg"
+                            alt="">
+                        <div class="min-w-0 flex-auto">
+                            <p class="darkable text-sm font-bold leading-6 text-gray-900">Somnath Kaushik</p>
+                            <p class="darkable mt-1 truncate text-xs leading-5 text-gray-800">
+                                official.inno.fei.21@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                        <p class="text-sm leading-6 font-bold ">President</p>
+                        <!-- <p class="mt-1 text-xs leading-5 text-gray-500">Last seen <time datetime="2023-01-23T13:23Z">3h ago</time></p> -->
+                    </div>
+                </li>
+                <li class="flex justify-between gap-x-6 py-5">
+                    <div class="flex min-w-0 gap-x-4">
+                        <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="" alt="">
+                        <div class="min-w-0 flex-auto">
+                            <p class="darkable text-sm font-bold leading-6 text-gray-900">Khushi Jain</p>
+                            <p class="darkable mt-1 truncate text-xs leading-5 text-gray-800">khushi.jain_cs21@gla.ac.in
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                        <p class="text-sm leading-6 font-bold ">Vice President</p>
+                    </div>
+                </li>
+                <li class="flex justify-between gap-x-6 py-5">
+                    <div class="flex min-w-0 gap-x-4">
+                        <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="" alt="">
+                        <div class="min-w-0 flex-auto">
+                            <p class="darkable text-sm font-bold leading-6 text-gray-900 ">Prakarsh Kaushik</p>
+                            <p class="darkable mt-1 truncate text-xs leading-5 text-gray-800">
+                                prakarsh.11.kaushik@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                        <p class="text-sm leading-6 font-bold ">Student Polytechnic CS</p>
+                        <div class="mt-1 flex items-center gap-x-1.5">
+                            <div class="flex-none rounded-full bg-emerald-500/20 p-1">
+                                <div class="h-1.5 w-1.5 rounded-full bg-emerald-500"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- ---------------------Add more--------------------- -->
+            </ul>
+        </div>
+
+
+
+
+
+
+
+
+        <button class="toggle-theme">
+            <i id="theme-icon" class="fas fa-sun"></i>
+            <!-- <h3>Theme</h3> -->
+        </button>
+
+        <script>
+            // Function to toggle dark theme and change logos
+            function showTheme() {
+                const body = document.body;
+                body.classList.toggle('dark');
+
+                // Toggle dark theme on elements with class 'darkable'
+                document.querySelectorAll('.darkable').forEach(element => {
+                    element.classList.toggle('dark');
+                });
+
+                // Change navbar logo based on the theme
+                const navLogo = document.getElementById('nav-logo');
+                if (navLogo) {
+                    if (body.classList.contains('dark')) {
+                        navLogo.src = '../Images/DarkNav.png'; 
+                    } else {
+                        navLogo.src = '../Images/logo4-removebg-preview.png'; 
+                    }
+                }
+
+                // Change footer logo based on the theme
+                const footerLogo = document.getElementById('footerlogo');
+                if (footerLogo) {
+                    if (body.classList.contains('dark')) {
+                        footerLogo.src = '../Images/darkshortlogo.png';
+                    } else {
+                        footerLogo.src = '../Images/logo3-removebg-preview.png';
+                    }
+                }
+
+                // Change the background image based on the theme
+                if (body.classList.contains('dark')) {
+                    body.style.backgroundImage = "url('data:image/png;base64,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')";
+                } else {
+                    body.style.backgroundImage = "url('https://images.unsplash.com/photo-1488998427799-e3362cec87c3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGNvbnRhY3QlMjB1c3xlbnwwfHwwfHx8MA%3D%3D')";
+                }
+
+                // Change the theme icon
+                const themeIcon = document.getElementById('theme-icon');
+                if (body.classList.contains('dark')) {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                } else {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                }
+            }
+
+            // Add event listener to the button
+            document.querySelector('.toggle-theme').addEventListener('click', showTheme);
+        </script>
+
+
+
+
+
+
+
+
+
+
+        <!-- -----------------CONTACT US MAIL---------------------------- -->
+
+        <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+        <div class="elfsight-app-9ccaa9de-fa46-4379-9431-ad58d0b339ac" data-elfsight-app-lazy></div>
+
+        <!-- https://dash.elfsight.com/widget/9ccaa9de-fa46-4379-9431-ad58d0b339ac -->
+
+
+
+        <!-- -----------------INSTAGRAM CHAT------------------------------ -->
+
+        <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+        <div class="elfsight-app-b4b2adc8-cf03-45c3-aa6c-f8f54be3e155" data-elfsight-app-lazy></div>
+
+        <!-- https://dash.elfsight.com/widget/b4b2adc8-cf03-45c3-aa6c-f8f54be3e155 -->
+
+
+
+        <!-- ------------------TELEGRAM CHAT------------------------------- -->
+
+
+        <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+        <div class="elfsight-app-e681f93c-86e6-49a1-b17b-aca8b8e85fde" data-elfsight-app-lazy></div>
+
+        <!-- https://dash.elfsight.com/widget/e681f93c-86e6-49a1-b17b-aca8b8e85fde -->
+
+
+
+
+
+
+        <!-- --------------------Footer------------------------ -->
+        <footer class="darkable text-gray-300 body-font footer darkable">
+            <hr class="darkable absolute-top-hr">
+            <div
+                class="darkable  justify-between container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+                <div class="darkable  w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left mt-0">
+                    <a
+                        class="darkable  flex-wrap title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                        <img class="darkable  col-span-1 max-h-12 object-contain"
+                            src="../Images/logo3-removebg-preview.png" alt="Learning Heaven" width="158" height="48"
+                            id="footerlogo">
+                        <span class="darkable  ml-3 text-xl">Learning Heaven</span>
+                    </a>
+                    <p class="darkable  mt-2 text-sm text-gray-500">Code Like A Boss With Learning Heaven.</p>
+                </div>
+                <div
+                    class="darkable  flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center justify-end">
+                    <div class="darkable lg:w-1/4 md:w-1/2 w-full px-4">
+                        <h2 class="darkable  title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Pages
+                        </h2>
+                        <ul class="darkable  list-none mb-10">
+                            <li><a href="/" class="darkable  text-blue-600">Home</a></li>
+                            <li><a href="/courses" class="darkable  text-blue-600">Courses</a></li>
+                            <li><a href="/plans" class="darkable  text-blue-600">Plans</a></li>
+                            <li><a href="/resources" class="darkable  text-blue-600">Resources</a></li>
+                            <li><a href="/products" class="darkable  text-blue-600">Products</a></li>
+                            <li><a href="/contact" class="darkable  text-blue-600">Contact Us</a></li>
+                            <li><a href="/Placements" class="darkable  text-blue-600">Placements</a></li>
+                        </ul>
+                    </div>
+                    <div class="darkable  lg:w-1/4 md:w-1/2 w-full px-4">
+                        <h2 class="darkable  title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Social
+                            Links
+                        </h2>
+                        <ul class="darkable  list-none mb-10">
+                            <li><a class="darkable  text-blue-600">First Link</a></li>
+                            <li><a class="darkable  text-blue-600">Second Link</a></li>
+                            <li><a class="darkable  text-blue-600">Third Link</a></li>
+                            <li><a class="darkable  text-blue-600">Fourth Link</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="darkable absolute-top-hr">
+            <div class="darkable bg-gray-100 darkable">
+                <div class="darkable  container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row text-center">
+                    <p class="darkable  text-gray-500 text-sm text-center sm:text-left">Made with ❤️ <a
+                            href="https://twitter.com/knyttneve" rel="noopener noreferrer"
+                            class="darkable  text-gray-600 ml-1" target="_blank">by Somnath Kaushik</a></p>
+                    <span class="darkable  inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                        <a class="darkable  text-gray-500">
+                            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                class="darkable w-5 h-5" viewBox="0 0 24 24">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a class="darkable  ml-3 text-gray-500">
+                            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                class="darkable w-5 h-5" viewBox="0 0 24 24">
+                                <path
+                                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a class="darkable  ml-3 text-gray-500">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="darkable  w-5 h-5" viewBox="0 0 24 24">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                            </svg>
+                        </a>
+                        <a class="darkable  ml-3 text-gray-500">
+                            <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="0" class="darkable w-5 h-5" viewBox="0 0 24 24">
+                                <path stroke="none"
+                                    d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                                </path>
+                                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                            </svg>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+
+
+
+
+        <!-- -----------Learning Heaven------------------ -->
+
+        <div id="load">
+            <div>L</div>
+            <div>E</div>
+            <div>A</div>
+            <div>R</div>
+            <div>N</div>
+            <div>I</div>
+            <div>N</div>
+            <div>G</div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div>H</div>
+            <div>E</div>
+            <div>A</div>
+            <div>V</div>
+            <div>E</div>
+            <div>N</div>
+            <!-- <div>L</div>
+        <div>A</div>
+        <div>U</div> -->
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- ----------------------Cursor------------------------
+
+    <div id="cursor">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <script src="../Components/Cursor.js"></script> -->
+
+        <script src="/public/globalScript.js"></script>
+
+
+
+
+</body>
+
+</html>

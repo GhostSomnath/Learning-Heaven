@@ -1,0 +1,22 @@
+/* Banner Styles */
+.banner {
+    background: linear-gradient(135deg, #7dd3fc, #64c7f6); /* Pink gradient background */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem !important;
+  }
+
+  .banner button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  body::-webkit-scrollbar {
+    display: none;
+}

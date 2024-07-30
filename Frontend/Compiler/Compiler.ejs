@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adding Logo to web page  -->
+    <link rel="icon" href="/Frontend/Images/logo3-removebg-preview.png">
+
+    <!-- Linking Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Linking codemirror -->
+    <link rel="stylesheet" href="/codemirror-5.65.16/lib/codemirror.css">
+    <script src="/codemirror-5.65.16/lib/codemirror.js"></script>
+    <script src="/codemirror-5.65.16/mode/clike/clike.js"></script>
+    <link rel="stylesheet" href="/codemirror-5.65.16/theme/dracula.css">
+    <script src="/codemirror-5.65.16/addon/edit/closebrackets.js"></script>
+    <script src="/codemirror-5.65.16/mode/python/python.js"></script>
+
+
+    <!-- Bootstrap icons  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Linking other css files -->
+    <link rel="stylesheet" href="/Frontend/style.css">
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="/Frontend/Components/Navbar.css">
+    <link rel="stylesheet" href="/Frontend/Components/Banner.css">
+    <link rel="stylesheet" href="/Frontend/Components/Footer.css">
+    <link rel="stylesheet" href="/Frontend/Components/Cursor.css">
+    <!-- <link rel="stylesheet" href="/Frontend/Components/"> -->
+
+    <!-- <script src="Api.js"></script> -->
+    <script src="/Frontend/Components/Cursor.js"></script>
+
+
+    <title>Learning Heaven</title>
+</head>
+
+<body class="dimskyblue ">
+
+
+    <%- include('../Components/MainNavbar.ejs') %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- --------------------------------- Code compiler -------------------------------- -->
+
+
+    <section class=" mb-40 " id="codeSection">
+
+
+        <div class="flex flex-wrap m-3 ">
+            <div class="relative flex-grow max-w-full flex-1 px-4 ">
+                <div class="w-25 flex justify-between mb-2 bg-gray-900 rounded p-2">
+                    <div class="min-w-20">
+                        <label class="visually-hidden " for="inlineFormSelectPref"></label>
+                        <select class="darkable form-select h-8" id="inlineFormSelectPref">
+                            <option selected>Choose &nbsp &nbsp &nbsp &nbsp</option>
+                            <option value="Java">Java</option>
+                            <option value="Cpp">Cpp</option>
+                            <option value="Python">Python</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button type="button"
+                            class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline skyblue text-white hower">Learning
+                            Heaven</button>
+
+                        <button type="button" id="run"
+                            class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline skyblue text-white hower"><i
+                                class="bi bi-play-fill"></i></button>
+
+                    </div>
+                </div>
+                <textarea type="text" id="editor"
+                    class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
+                    aria-label="First name">
+                </textarea>
+            </div>
+            <div class="relative flex-grow max-w-full flex-1 px-4 flex flex-col rounded bg-gray-900 px-4">
+
+                <div class="h-50 mt-6">
+                    <label for="Input" class="text-gray-100 mt-4 mb-2">Input</label>
+                    <textarea rows="8" type="text" id="input"
+                        class="darkable block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded h-75"
+                        aria-label="Last name"></textarea>
+                </div>
+                <div class="h-50 mt-4">
+                    <label for="Output" class="text-gray-100 mb-2">Output</label>
+                    <textarea rows="8" type="text" id="output"
+                        class="darkable block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded h-75"
+                        aria-label="Last name"></textarea>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+            mode: "text/x-c++src",
+            theme: "dracula",
+            lineNumbers: true,
+            autoCloseBrackets: true,
+
+        })
+        var width = window.innerWidth
+        var input = document.getElementById("input")
+        var output = document.getElementById("output")
+        var run = document.getElementById("run")
+        editor.setSize(0.7 * width, "500")
+        var option = document.getElementById("inlineFormSelectPref")
+        option.addEventListener("change", function () {
+            if (option.value == "Java") {
+                editor.setOption("mode", "text/x-java");
+                editor.setValue("public class Main { \n  public static void main(String[] args) { \n    // Your Java code here \n  } \n}");
+
+            }
+            else if (option.value == "Python") {
+                editor.setOption("mode", "text/x-python")
+                editor.setValue("# Write your Python Code Here !!");
+
+            }
+            else {
+                editor.setOption("mode", "text/x-c++src")
+                editor.setValue("#include <iostream> \n using namespace std; \n int main() { \n   // Your C++ code here \n   return 0; \n} ");
+            }
+        })
+        var code;
+        run.addEventListener("click", async function () {
+            code = {
+                code: editor.getValue(),
+                input: input.value,
+                lang: option.value
+            }
+            console.log(code)
+            <!-- var oData = await fetch("https://coding-blocks-glau-web-project.onrender.com/compile", { -->
+            var oData = await fetch("http://localhost:8000/compile", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(code)
+            })
+            var d = await oData.json()
+            output.value = d.output
+        })
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <%- include('../partials/footer.ejs') %>
+
+
+
+
+
+
+
+
+    <script src="/public/globalScript.js"></script>
+
+    
+
+
+
+
+</body>
+
+</html>

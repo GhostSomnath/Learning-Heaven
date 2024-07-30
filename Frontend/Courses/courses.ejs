@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, 
+				initial-scale=1.0">
+    <!-- Adding Logo to web page  -->
+    <link rel="icon" href="../Images/logo3-removebg-preview.png">
+    <!-- Link to Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    
+    <!-- Linking other css files -->
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../Components/Navbar.css">
+    <link rel="stylesheet" href="../Components/Banner.css">
+    <link rel="stylesheet" href="../Components/Footer.css">
+    <link rel="stylesheet" href="../Components/Cursor.css">
+    <link rel="stylesheet" href="courses_style.css">
+    <!-- Linking Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+
+    <title>Learning Heaven</title>
+    <style>
+        body::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+
+    <!-- <link rel="stylesheet" href="responsive.css"> -->
+</head>
+
+<body class="dimskyblue"  id="content">
+
+
+
+    <%- include('../Components/MainNavbar.ejs') %>
+
+
+
+
+
+
+
+
+
+    <!-- Dropdown button -->
+    <div class=" darkable relative monuBhaiyaOne skyblue ">
+        <div class=" text-white font-semibold py-2 px-4 rounded absolute top-0 right-0">
+            <button id="dropdownBtn "
+                class=" darkable boder skyblue text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center "
+                onclick="toggleDropdown()">
+                <span class="" id="selectedLanguage">Java</span> <!-- Updated default selected language -->
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path
+                        d="M10 12.586l-4.293-4.293a1 1 0 0 1 1.414-1.414L10 10.758l3.879-3.879a1 1 0 0 1 1.414 1.414l-4.586 4.586a1 1 0 0 1-1.414 0z" />
+                </svg>
+            </button>
+            <ul id="dropdownOptions" class="darkable absolute hidden text-gray-700 pt-1">
+                <li><a class="darkable darkhower  rounded-t bg-white hower py-2 px-4 block whitespace-no-wrap"
+                        onclick="showJava()">Java</a></li>
+                <li><a class="darkable darkhower bg-white hower py-2 px-4 block whitespace-no-wrap"
+                        onclick="showPython()">Python</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Content for Java -->
+    <div id="javaContent" class="content darkable ">
+        <!-- Java content goes here -->
+
+
+        <!-- ------------------------Monu Bhaiya Ka Course--------------------------------- -->
+
+
+        <section class="text-gray-600 body-font overflow-hidden ">
+            <div class="container px-5 py-24 mx-auto">
+                <div class="lg:w-4/5 mx-auto flex flex-wrap">
+                    <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+                        <h2 class="text-sm title-font text-gray-500 tracking-widest font-medium"><c>Master Data Structures and Algorithms in Java. Crack Coding Interviews</c>
+                        </h2>
+                        <h1 class="text-gray-900 text-3xl title-font font-medium mb-4 darkable ">Algo.Java | Data Structures and
+                            Algorithms
+                        </h1>
+                        <div class="darkable flex relative mb-4">
+                            <a id="descriptionLink"
+                                class="flex-grow textskyblue border-b-2 border-gray-300 py-2 text-lg px-1 active-link">Summary</a>
+                            <a id="reviewsLink" class="flex-grow border-b-2 border-gray-300 py-2 text-lg px-1">
+                                Highlights</a>
+                            <a id="detailsLink"
+                                class="flex-grow border-b-2 border-gray-300 py-2 text-lg px-1">Comparison</a>
+                            <span id="activeLine"
+                                class="absolute h-1 skyblue bottom-0 left-0 transition-transform duration-300 w-36"></span>
+                        </div>
+                        <div class="darkable  bg-white px-2 pb-2 rounded-lg">
+                            <div id="descriptionContent" class="leading-relaxed mb-4 mx-4 text-xs">
+                                <p>
+                                    <!-- <h1 class="text-gray-900 text-xl underline">Summary :</h1> -->
+                                    This uniquely designed online course covering advanced topics of Data Structures &
+                                    Algorithms by Coding Blocks is a complete package for all the budding programmers
+                                    who
+                                    aspire to gain expertise in Data Structures and Algorithms or are appearing for
+                                    their
+                                    internship/placement interviews. This online Data structures and algorithm course is
+                                    offering you a wealth of programming challenges that you may face at your next job
+                                    interview. With over 250 video lectures and several practice problems. Through these
+                                    online classes and practicing problems, the students will not only become more
+                                    efficient
+                                    with their solutions by optimizing space and time but this course will also provide
+                                    them
+                                    a firm base to excel in all their programming interviews. The classes start with a
+                                    basic
+                                    revision of recursion followed by advanced topics such as OOP(s), Complexity
+                                    Analysis,
+                                    etc. The core focus of these Java classes is to maintain an equilibrium between
+                                    theory
+                                    and practical knowledge with an ample amount of practice of questions based on
+                                    Sorting,
+                                    Searching, Greedy Algorithms, Divide and Conquer Algorithms, Dynamic Programming
+                                    along
+                                    with a comprehensive revision of data structures like linked-lists, Trees, Graphs,
+                                    Heaps, Hashing etc.<br>
+
+                                    <br>
+                                </p>
+                                <div class="flex border-t border-gray-200 py-2">
+                                    <span class="text-gray-500">Instructors
+                                    </span>
+                                    <span class="ml-auto text-gray-900">Kartik Sapra, Rishab Kapoor</span>
+                                </div>
+                                <div class="flex border-t border-gray-200 py-2">
+                                    <span class="text-gray-500">Course Language</span>
+                                    <span class="ml-auto text-gray-900">English</span>
+                                </div>
+                                <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                                    <span class="text-gray-500">
+                                        <div class="my-4 flex items-center relative" data-v-4482dcad=""
+                                            data-v-d561662a="">
+                                            <span class="pos-rating orange mr-2" data-v-4482dcad=""><img
+                                                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_filled.svg"
+                                                    data-v-4482dcad=""></span><span class="pos-rating orange mr-2"
+                                                data-v-4482dcad=""><img
+                                                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_filled.svg"
+                                                    data-v-4482dcad=""></span><span class="pos-rating orange mr-2"
+                                                data-v-4482dcad=""><img
+                                                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_filled.svg"
+                                                    data-v-4482dcad=""></span><span class="pos-rating orange mr-2"
+                                                data-v-4482dcad=""><img
+                                                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_filled.svg"
+                                                    data-v-4482dcad=""></span> <span class="neg-rating mr-2"
+                                                data-v-4482dcad=""><img
+                                                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_unfilled.svg"
+                                                    data-v-4482dcad=""></span> <span class="ml-3" data-v-4482dcad=""
+                                                data-v-d561662a="">
+
+                                            </span>
+                                        </div>
+                                    </span>
+                                    <span class="ml-auto text-gray-900">
+                                        <div class="my-4 flex items-center relative" data-v-4482dcad=""
+                                            data-v-d561662a="">
+
+                                            <span class="ml-3" data-v-4482dcad="" data-v-d561662a="">
+                                                <b data-v-4482dcad="" data-v-d561662a="">4.56/5.0,</b>
+                                                299 ratings
+                                            </span>
+                                        </div>
+                                    </span>
+                                </div>
+
+
+
+                                <div class="flex">
+                                    <span class="title-font font-medium text-2xl text-gray-900 darkable ">₹1725/-</span>
+                                    <button
+                                        class="flex ml-auto text-white skyblue border-0 py-2 px-6 focus:outline-none hower rounded"><a href="https://online.codingblocks.com/courses/data-structures-and-algorithms-online-course-java-algo">Enroll Now</a> 
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="darkable  bg-white px-2 pb-2 rounded-lg">
+                            <div id="reviewsContent" class="leading-relaxed mb-4" style="display: none;">
+                                <!-- Course Highlights content here -->
+                                <p>
+                                <h1 class="darkable text-gray-900 text-xl underline">Course Highlights:</h1>
+                                • Extensive Data Structures & Algorithmic Coverage<br>
+                                • 300+ Video Lectures and Code Challenges<br>
+                                • Hint Videos for Complex Problems<br>
+                                • Lifetime Assignment Access<br>
+                                • Advanced Topics for Interviews<br>
+                                • Expert Doubt Support for 6 months(only for Premium version).<br>
+                                </p>
+                                <div class="flex mt-8 border-t-2 border-gray-300 py-2 pt-8">
+                                    <span class="darkable title-font font-medium text-2xl text-gray-900">₹1725/-</span>
+                                    <button
+                                        class="flex ml-auto text-white skyblue border-0 py-2 px-6 focus:outline-none boder hower rounded"><a href="https://online.codingblocks.com/courses/data-structures-and-algorithms-online-course-java-algo">Enroll Now</a> 
+                                        </button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="darkable  bg-white px-2 pb-2 rounded-lg">
+                            <div id="detailsContent" class="leading-relaxed mb-4" style="display: none;">
+                                <!-- Comparision content here -->
+                                <p>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Course Comparison</th>
+                                            <th>Java Fundamentals</th>
+                                            <th>Algo.Java</th>
+                                            <th>Interview Preparation Java</th>
+                                            <th>Java Crux Master Course</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Java Basics</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Data Structures</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Algorithms</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Java Collections</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Non Coding Topics</td>
+                                            <td>❌</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </p>
+
+                                <div class="flex mt-8 border-t-2 border-gray-300 py-2 pt-8">
+                                    <span class="darkable title-font font-medium text-2xl text-gray-900">₹1725/-</span>
+                                    <button
+                                        class="flex ml-auto text-white skyblue border-0 py-2 px-6 focus:outline-none boder hower rounded"><a href="https://online.codingblocks.com/courses/data-structures-and-algorithms-online-course-java-algo">Enroll Now</a> 
+                                        </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img alt="ecommerce" class="lg:w-1/2 w-100 lg:h-auto h-64  object-center rounded"
+                        src="../Images/java.png">
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const descriptionLink = document.getElementById("descriptionLink");
+                const reviewsLink = document.getElementById("reviewsLink");
+                const detailsLink = document.getElementById("detailsLink");
+                const activeLine = document.getElementById("activeLine");
+
+                const descriptionContent = document.getElementById("descriptionContent");
+                const reviewsContent = document.getElementById("reviewsContent");
+                const detailsContent = document.getElementById("detailsContent");
+
+                // Show description by default
+                descriptionContent.style.display = "block";
+                reviewsContent.style.display = "none";
+                detailsContent.style.display = "none";
+
+                // Set initial position of the active line
+                activeLine.style.transform = "translateX(0)";
+
+                descriptionLink.addEventListener("click", function () {
+                    if (!descriptionLink.classList.contains("active-link")) {
+                        descriptionContent.style.display = "block";
+                        reviewsContent.style.display = "none";
+                        detailsContent.style.display = "none";
+
+                        // Move active line to description
+                        activeLine.style.transform = "translateX(0)";
+
+                        // Update link colors
+                        descriptionLink.classList.add("active-link");
+                        reviewsLink.classList.remove("active-link");
+                        detailsLink.classList.remove("active-link");
+
+                        // Make description link color black
+                        descriptionLink.classList.remove("inactive-link");
+                        reviewsLink.classList.add("inactive-link");
+                        detailsLink.classList.add("inactive-link");
+                    }
+                });
+
+                reviewsLink.addEventListener("click", function () {
+                    if (!reviewsLink.classList.contains("active-link")) {
+                        descriptionContent.style.display = "none";
+                        reviewsContent.style.display = "block";
+                        detailsContent.style.display = "none";
+
+                        // Move active line to reviews
+                        activeLine.style.transform = "translateX(100%)";
+
+                        // Update link colors
+                        descriptionLink.classList.remove("active-link");
+                        reviewsLink.classList.add("active-link");
+                        detailsLink.classList.remove("active-link");
+
+                        // Make reviews link color black
+                        descriptionLink.classList.add("inactive-link");
+                        reviewsLink.classList.remove("inactive-link");
+                        detailsLink.classList.add("inactive-link");
+                    }
+                });
+
+                detailsLink.addEventListener("click", function () {
+                    if (!detailsLink.classList.contains("active-link")) {
+                        descriptionContent.style.display = "none";
+                        reviewsContent.style.display = "none";
+                        detailsContent.style.display = "block";
+
+                        // Move active line to details
+                        activeLine.style.transform = "translateX(200%)";
+
+                        // Update link colors
+                        descriptionLink.classList.remove("active-link");
+                        reviewsLink.classList.remove("active-link");
+                        detailsLink.classList.add("active-link");
+
+                        // Make details link color black
+                        descriptionLink.classList.add("inactive-link");
+                        reviewsLink.classList.add("inactive-link");
+                        detailsLink.classList.remove("inactive-link");
+                    }
+                });
+            });
+        </script>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!------------------------------------ Content for Python -------------------------------------------->
+    <div id="pythonContent" class="content" style="display: none;">
+
+
+
+
+
+        <!-- ------------------Python Ka Course----------------- -->
+
+
+
+
+        <section class="darkable text-gray-600 body-font overflow-hidden ">
+            <div class="container px-5 py-24 mx-auto">
+                <div class="lg:w-4/5 mx-auto flex flex-wrap">
+                    <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+                        <h2 class="darkable text-sm title-font text-gray-500 tracking-widest">
+                            <c class=" font-medium ">Learn Python for Web Development, Data Science & ML </c>
+
+                        </h2>
+                        <h1 class="darkable text-gray-900 text-3xl title-font font-medium mb-4">Python for Developers Master
+                            Course
+                        </h1>
+                        <div class="darkable flex relative mb-4">
+                            <a id="descriptionLink1"
+                                class="flex-grow textskyblue border-b-2 border-gray-300 py-2 text-lg px-1 active-link">Summary</a>
+                            <a id="reviewsLink1" class="flex-grow border-b-2 border-gray-300 py-2 text-lg px-1">
+                                Highlights</a>
+                            <a id="detailsLink1"
+                                class="flex-grow border-b-2 border-gray-300 py-2 text-lg px-1">Comparison</a>
+                            <span id="activeLine1"
+                                class="absolute h-1 skyblue bottom-0 left-0 transition-transform duration-300 w-36"></span>
+                        </div>
+                        <div class="darkable  bg-white px-2 pb-2 rounded-lg">
+                            <div id="descriptionContent1" class="leading-relaxed mb-4 mx-4 text-xs">
+                                <p>
+                                    <!-- <h1 class="text-gray-900 text-xl underline">Summary :</h1> -->
+                                    First of its kind, our Python online for Developers is a uniquely designed online
+                                    course in Python to aid your journey right from the beginning to the very end in
+                                    becoming the most skilled software engineers across the globe. Our online course in
+                                    Python is not only in absolute coherence with our most sought after classroom
+                                    program, but also provides you the comfort of learning at your home. With over 50
+                                    video lectures, all our doubt classes will also be held live on our own online
+                                    platform so as to provide the students with the most effective doubt solving, in a
+                                    one-to-one conversational format. This online training in Python includes basic
+                                    programming fundamentals, object oriented programming (OOPs) and in-depth coverage
+                                    of data structures in Python. Through these online classes, the students will not
+                                    only become more efficient with their solutions by optimizing space and time but
+                                    this course will also provide them a firm base to excel in all their programming
+                                    interviews. The core focus of these Python classes for beginners is to maintain an
+                                    equilibrium between theory and practical, thus providing the programmers with an
+                                    ample amount of practice of questions based on different programming techniques. Not
+                                    just programming exercises, this course gives you kickstart in Python Development by
+                                    introducing python for web - working with web API's, building chatbots, creating
+                                    apps using flask and Django and Python for Data Science. In the end of the course we
+                                    also cover automation using selenium which you can use automate boring tasks in
+                                    Python.<br>
+
+                                    <br>
+                                </p>
+                                <div class="flex border-t border-gray-200 py-2">
+                                    <span class="text-gray-500">Instructors
+                                    </span>
+                                    <span class="ml-auto text-gray-900">Jatin Katyal, Prateek Narang</span>
+                                </div>
+                                <div class="flex border-t border-gray-200 py-2">
+                                    <span class="text-gray-500">Course Language</span>
+                                    <span class="ml-auto text-gray-900">English</span>
+                                </div>
+                                <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                                    <span class="text-gray-500">
+                                        <div class="my-4 flex items-center relative" data-v-4482dcad=""
+                                            data-v-d561662a="">
+                                            <span class="pos-rating orange mr-2" data-v-4482dcad=""><img
+                                                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_filled.svg"
+                                                    data-v-4482dcad=""></span><span class="pos-rating orange mr-2"
+                                                data-v-4482dcad=""><img
+                                                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_filled.svg"
+                                                    data-v-4482dcad=""></span><span class="pos-rating orange mr-2"
+                                                data-v-4482dcad=""><img
+                                                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_filled.svg"
+                                                    data-v-4482dcad=""></span><span class="pos-rating orange mr-2"
+                                                data-v-4482dcad=""><img
+                                                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_filled.svg"
+                                                    data-v-4482dcad=""></span> <span class="neg-rating mr-2"
+                                                data-v-4482dcad=""><img
+                                                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_unfilled.svg"
+                                                    data-v-4482dcad=""></span> <span class="ml-3" data-v-4482dcad=""
+                                                data-v-d561662a="">
+
+                                            </span>
+                                        </div>
+                                    </span>
+                                    <span class="ml-auto text-gray-900">
+                                        <div class="my-4 flex items-center relative" data-v-4482dcad=""
+                                            data-v-d561662a="">
+
+                                            <span class="ml-3" data-v-4482dcad="" data-v-d561662a="">
+                                                <b data-v-4482dcad="" data-v-d561662a="">4.48/5.0,</b>
+                                                384 ratings
+                                            </span>
+                                        </div>
+                                    </span>
+                                </div>
+
+
+
+                                <div class="flex">
+                                    <span class="darkable title-font font-medium text-2xl text-gray-900">₹2100/-</span>
+                                    <button
+                                        class="flex ml-auto text-white skyblue border-0 py-2 px-6 focus:outline-none hower boder rounded"><a href="https://online.codingblocks.com/courses/python-for-beginners-developers">Enroll Now</a>
+                                        </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="darkable  bg-white px-2 pb-2 rounded-lg">
+                            <div id="reviewsContent1" class="leading-relaxed mb-4" style="display: none;">
+                                <!-- Course Highlights content here -->
+                                <p>
+                                <h1 class="text-gray-900 text-xl underline">Course Highlights:</h1>
+                                • Detailed concept videos of Python Topics<br>
+                                • Extensive coverage of framework<br>
+                                • Lessons on Deploying your Application<br>
+                                • 10 projects using Python<br>
+                                • Expert Doubt Support for 6 months(only for Premium version).<br>
+                                </p>
+                                <div class="flex mt-8 border-t-2 border-gray-300 py-2 pt-8">
+                                    <span class="darkable title-font font-medium text-2xl text-gray-900">₹2100/-</span>
+                                    <button
+                                        class="flex ml-auto boder text-white skyblue border-0 py-2 px-6 focus:outline-none hower rounded"><a href="https://online.codingblocks.com/courses/python-for-beginners-developers">Enroll Now</a>
+                                        </button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="darkable  bg-white px-2 pb-2 rounded-lg">
+                            <div id="detailsContent1" class="leading-relaxed mb-4" style="display: none;">
+                                <!-- Comparision content here -->
+                                <p>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Topics/Courses</th>
+                                            <th>Python Fundamentals</th>
+                                            <th>Python for Data Science</th>
+                                            <th>Python Django</th>
+                                            <th>Python for Developers Master</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Python Basics</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Async Programming in Python</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Intermediate Python</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Data Science Libraries</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Python for Web (BS, Requests, Flask)</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Python Chatbots</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Python Automation</td>
+                                            <td>❌</td>
+                                            <td>❌</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Machine Learning Introduction</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Web Apps in Flask</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Git/Github</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Backend Development</td>
+                                            <td>❌</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Deploying ML Models</td>
+                                            <td>❌</td>
+                                            <td>✅ (Flask)</td>
+                                            <td>✅ (Django)</td>
+                                            <td>✅ (Flask+Django)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>REST API's</td>
+                                            <td>❌</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Projects</td>
+                                            <td>❌</td>
+                                            <td>4 Mini Projects</td>
+                                            <td>5 Django Projects</td>
+                                            <td>10 Mini Projects</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Capstone Project</td>
+                                            <td>Python Game</td>
+                                            <td>Face Recogntion</td>
+                                            <td>Social Media Platform</td>
+                                            <td>Social Media Platform</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pre-requsites</td>
+                                            <td>-</td>
+                                            <td>Python Basics</td>
+                                            <td>Programming in C++/Java</td>
+                                            <td>Programming in C++/Java</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Addons</td>
+                                            <td>Practice Problems</td>
+                                            <td>Data Science Challenges</td>
+                                            <td>Coming Soon</td>
+                                            <td>Coming Soon</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </p>
+
+                                <div class="flex mt-8 border-t-2 border-gray-300 py-2 pt-8">
+                                    <span class="darkable title-font font-medium text-2xl text-gray-900">₹2100/-</span>
+                                    <button
+                                        class="flex ml-auto text-white skyblue border-0 py-2 px-6 focus:outline-none hower boder rounded"><a href="https://online.codingblocks.com/courses/python-for-beginners-developers">Enroll Now</a>
+                                        </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img alt="ecommerce" class="lg:w-1/2 w-80 lg:h-auto h-64  object-center rounded"
+                        src="../Images/python.png">
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const descriptionLink1 = document.getElementById("descriptionLink1");
+                const reviewsLink1 = document.getElementById("reviewsLink1");
+                const detailsLink1 = document.getElementById("detailsLink1");
+                const activeLine1 = document.getElementById("activeLine1");
+
+                const descriptionContent1 = document.getElementById("descriptionContent1");
+                const reviewsContent1 = document.getElementById("reviewsContent1");
+                const detailsContent1 = document.getElementById("detailsContent1");
+
+                // Show description by default
+                descriptionContent1.style.display = "block";
+                reviewsContent1.style.display = "none";
+                detailsContent1.style.display = "none";
+
+                // Set initial position of the active line
+                activeLine1.style.transform = "translateX(0)";
+
+                descriptionLink1.addEventListener("click", function () {
+                    if (!descriptionLink1.classList.contains("active-link")) {
+                        descriptionContent1.style.display = "block";
+                        reviewsContent1.style.display = "none";
+                        detailsContent1.style.display = "none";
+
+                        // Move active line to description
+                        activeLine1.style.transform = "translateX(0)";
+
+                        // Update link colors
+                        descriptionLink1.classList.add("active-link");
+                        reviewsLink1.classList.remove("active-link");
+                        detailsLink1.classList.remove("active-link");
+
+                        // Make description link color black
+                        descriptionLink1.classList.remove("inactive-link");
+                        reviewsLink1.classList.add("inactive-link");
+                        detailsLink1.classList.add("inactive-link");
+                    }
+                });
+
+                reviewsLink1.addEventListener("click", function () {
+                    if (!reviewsLink1.classList.contains("active-link")) {
+                        descriptionContent1.style.display = "none";
+                        reviewsContent1.style.display = "block";
+                        detailsContent1.style.display = "none";
+
+                        // Move active line to reviews
+                        activeLine1.style.transform = "translateX(100%)";
+
+                        // Update link colors
+                        descriptionLink1.classList.remove("active-link");
+                        reviewsLink1.classList.add("active-link");
+                        detailsLink1.classList.remove("active-link");
+
+                        // Make reviews link color black
+                        descriptionLink1.classList.add("inactive-link");
+                        reviewsLink1.classList.remove("inactive-link");
+                        detailsLink1.classList.add("inactive-link");
+                    }
+                });
+
+                detailsLink1.addEventListener("click", function () {
+                    if (!detailsLink1.classList.contains("active-link")) {
+                        descriptionContent1.style.display = "none";
+                        reviewsContent1.style.display = "none";
+                        detailsContent1.style.display = "block";
+
+                        // Move active line to details
+                        activeLine1.style.transform = "translateX(200%)";
+
+                        // Update link colors
+                        descriptionLink1.classList.remove("active-link");
+                        reviewsLink1.classList.remove("active-link");
+                        detailsLink1.classList.add("active-link");
+
+                        // Make details link color black
+                        descriptionLink1.classList.add("inactive-link");
+                        reviewsLink1.classList.add("inactive-link");
+                        detailsLink1.classList.remove("inactive-link");
+                    }
+                });
+            });
+        </script>
+
+
+
+    </div>
+
+    <script>
+        // Show Java content by default
+        document.getElementById('javaContent').style.display = 'block';
+
+        // Function to toggle visibility of dropdown options
+        function toggleDropdown() {
+            var dropdownOptions = document.getElementById('dropdownOptions');
+            dropdownOptions.classList.toggle('hidden');
+        }
+
+        // Function to show Java content and hide Python content
+        function showJava() {
+            document.getElementById('javaContent').style.display = 'block';
+            document.getElementById('pythonContent').style.display = 'none';
+            document.getElementById('selectedLanguage').textContent = 'Java';
+            toggleDropdown(); // Hide dropdown after selection
+        }
+
+        // Function to show Python content and hide Java content
+        function showPython() {
+            document.getElementById('javaContent').style.display = 'none';
+            document.getElementById('pythonContent').style.display = 'block';
+            document.getElementById('selectedLanguage').textContent = 'Python';
+            toggleDropdown(); // Hide dropdown after selection
+        }
+
+        // Close dropdown when clicking outside of it
+        window.addEventListener('click', function (event) {
+            var dropdownBtn = document.getElementById('dropdownBtn');
+            var dropdownOptions = document.getElementById('dropdownOptions');
+            if (!dropdownBtn.contains(event.target) && !dropdownOptions.contains(event.target)) {
+                dropdownOptions.classList.add('hidden');
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+    <hr class="darkable absolute-top-hr">
+<div class="darkable p-8 lightskyblue">
+    <h1 class="text-center text-2xl font-bold m-4">Checkout Classroom Courses</h1>
+    <div class="darkable flex justify-center mb-12 "> 
+        <div class="owl-stage flex space-x-24" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 900px;">
+            <div class="owl-item active" style="width: 500px; margin-right: 20px;">
+                <div class="boder darkable box mt-3 skyblue p-4 rounded-lg shadow-md flex flex-col justify-between h-full">
+                    <div>
+                        <div class="livepan">
+                            <img src="https://cb3img.s3.ap-south-1.amazonaws.com/img/ClassroomNoida.png" alt="">
+                            <strong>Starts 21 April'24</strong>
+                        </div>
+                        <div class="darkable boxhead blue text-gray-900 p-2">
+                            <img src="https://cb3img.s3.ap-south-1.amazonaws.com/img/iconJava.svg" alt="Java DSA">
+                            Master Data structures and Algorithms using Java with System Design
+                        </div>
+                        <div class="darkable  p-2 flex skyblue">
+                            <div class="italic mr-12 overline"><span class="font-bold ">Mentor</span><br> Monu Kumar
+                                <span class=" flex ">
+                                    <img class="h-12 w-12"
+                                        src="https://cb3img.s3.ap-south-1.amazonaws.com/img/Testimonials/mentor-logos/Jamia_Millia_Islamia_Logo.svg.png"
+                                        alt="">
+                                    <img class="h-12 w-12"
+                                        src="https://cb3img.s3.ap-south-1.amazonaws.com/img/Testimonials/mentor-logos/cp.png"
+                                        alt="">
+                                    <img class="h-12 w-12 "
+                                        src="https://cb3img.s3.ap-south-1.amazonaws.com/img/amazonsq.png" alt="">
+                                </span>
+                            </div>
+                            <div class="mentorpic h-24 w-24 pt-4  "><img
+                                    src="https://cb3img.s3.ap-south-1.amazonaws.com/img/team/circles/monukumar.png" alt="">
+                            </div>
+                        </div>
+                        <div class="mentordetail boder"
+                            style="background: linear-gradient(90deg, #85cce8 0%, #def6fc 100%);">
+                            <div class="mentorname darkable " style="font-size: 90%;">Schedule: Sat & Sun (04:30 PM - 07:30 PM)
+                            </div>
+                        </div>
+                        <div class="boxdetail p-2">
+                            <h5>This course includes:</h5>
+                            <ul>
+                                <li class="flex "><img class="mr-1 h-4 w-4"
+                                        src="https://cb3img.s3.ap-south-1.amazonaws.com/img/bglobe.svg" alt=""> 350+
+                                    problems &amp; 6 live projects</li>
+                                <li class="flex "><img class="mr-1 h-4 w-4"
+                                        src="https://cb3img.s3.ap-south-1.amazonaws.com/img/baward.webp" alt="">
+                                    Covers Foundation, Basic and Advanced modules</li>
+                                <li class="flex "><img class="mr-1 h-4 w-4"
+                                        src="https://cb3img.s3.ap-south-1.amazonaws.com/img/6months.webp" alt=""> 3-4
+                                    months duration</li>
+                                <!-- Add other list items here -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pricedatail p-2">
+                        <div class="pricepan">
+                            <h4><span>Course Fee</span> ₹18,999/-</h4>
+                        </div>
+                        <div class="wishlst">
+                            <a href="https://dukaan.codingblocks.com/products/14330">
+                                <button
+                                    class="darkable darkhower inline-block skyblue boder hower text-white font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline btn-outline block w-full">
+                                    Enroll Now
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-item active " style="width: 500px; margin-right: 20px;">
+                <div class="boder darkable box mt-3 skyblue p-4 rounded-lg shadow-md flex flex-col justify-between h-full">
+                    <div>
+                        <div class="livepan">
+                            <img src="https://cb3img.s3.ap-south-1.amazonaws.com/img/ClassroomNoida.png" alt="">
+                            <strong>Starts 08 July'24</strong>
+                        </div>
+                        <div class="darkable  boxhead red text-gray-900 p-2">
+                            <img src="https://cb3img.s3.ap-south-1.amazonaws.com/img/iconJava.svg" alt="Java DSA">
+                            DSA using Java with System Design (FASTRACK)
+                        </div>
+                        <div class="darkable  p-2 flex skyblue">
+                            <div class="italic mr-12 overline"><span class="font-bold ">Mentor</span><br> Monu Kumar
+                                <span class=" flex ">
+                                    <img class="h-12 w-12"
+                                        src="https://cb3img.s3.ap-south-1.amazonaws.com/img/Testimonials/mentor-logos/Jamia_Millia_Islamia_Logo.svg.png"
+                                        alt="">
+                                    <img class="h-12 w-12"
+                                        src="https://cb3img.s3.ap-south-1.amazonaws.com/img/Testimonials/mentor-logos/cp.png"
+                                        alt="">
+                                    <img class="h-12 w-12 "
+                                        src="https://cb3img.s3.ap-south-1.amazonaws.com/img/amazonsq.png" alt="">
+                                </span>
+                            </div>
+                            <div class="mentorpic h-24 w-24 pt-4  "><img
+                                    src="https://cb3img.s3.ap-south-1.amazonaws.com/img/team/circles/monukumar.png" alt="">
+                            </div>
+                        </div>
+                        <div class="mentordetail boder "
+                            style="background: linear-gradient(90deg, #85cee8 0%, #def5fc 100%);">
+                            <div class="mentorname darkable " style="font-size: 90%;"> Schedule: Mon, Tue, Thur &amp; Fri (12:00 PM
+                                - 04:00 PM)
+                            </div>
+                        </div>
+                        <div class="boxdetail p-2">
+                            <h5>This course includes:</h5>
+                            <ul>
+                                <li class="flex "><img class="mr-1 h-4 w-4"
+                                        src="https://cb3img.s3.ap-south-1.amazonaws.com/img/bglobe.svg" alt=""> 350+
+                                    problems &amp; 6 live projects</li>
+                                <li class="flex "><img class="mr-1 h-4 w-4"
+                                        src="https://cb3img.s3.ap-south-1.amazonaws.com/img/baward.webp" alt="">
+                                    Covers Foundation, Basic and Advanced modules</li>
+                                <li class="flex "><img class="mr-1 h-4 w-4"
+                                        src="https://cb3img.s3.ap-south-1.amazonaws.com/img/6months.webp" alt=""> 2
+                                    months duration</li>
+                                <!-- Add other list items here -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pricedatail p-2">
+                        <div class="pricepan">
+                            <h4><span>Course Fee</span> ₹18,999/-</h4>
+                        </div>
+                        <div class="wishlst">
+                            <a href="https://dukaan.codingblocks.com/products/14562">
+                                <button
+                                    class="darkable darkhower inline-block skyblue hower boder text-white font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline btn-outline block w-full">
+                                    Enroll Now
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add other owl items here -->
+        </div>
+    </div>
+    </div>
+    <hr class="darkable absolute-top-hr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- -----------------------Coupon Codes----------------------------------------- -->
+
+
+    <section class="darkable dimskyblue mb-16">
+        <h1 class="darkable text-gray-900 text-3xl title-font font-medium items-center text-center pt-4">Coupon Codes</h1>
+        <div class="flex items-center justify-center">
+
+            <div class="flex-col items-center justify-center">
+                <div class="flex">
+                    <div
+                        class="flex lg:flex-row flex-col p-4 space-x-4 space-y-4 max-w-7xl justify-around w-full h-auto lg:h-60 items-center">
+                        <div
+                            class="darkable darkhower border rounded h-40 w-[100%] md:w-72 flex items-center justify-center ml-4 lg:px-0 px-6 bg-white shadow-xl md:mt-4">
+                            <div class="flex-col space-y-2 items-center px-0 md:px-6">
+                                <div class="flex items-center justify-between space-x-6">
+                                    <div class="flex items-center space-x-1">
+                                        <div class="text-lg font-medium text-violet-500"><img class="h-10 w-10"
+                                                src="../Images/online-class.png" alt="online" srcset=""></div>
+                                        <div class="text-sm font-medium text-gray-500">Online</div>
+                                    </div>
+                                    <div class="text-xs bg-gray-200 px-2 py-0.5 rounded-2xl text-gray-400 font-medium">
+                                        6 Months</div>
+                                </div>
+                                <div class="text-xl font-bold">CBCAOL5024</div>
+                                <div class="font-bold text-green-500 flex items-center space-x-1">
+                                    <div class="text-xl"><ion-icon name="trending-down-outline"></ion-icon></div>
+                                    <div class="text-sm">10% discount</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="darkable darkhower border rounded h-40 w-[100%] md:w-72 flex items-center justify-center ml-4 lg:px-0 px-6 bg-white shadow-xl">
+                            <div class="flex-col space-y-2 items-center px-0 md:px-6">
+                                <div class="flex items-center justify-between space-x-6">
+                                    <div class="flex items-center space-x-1">
+                                        <div class="text-lg font-medium text-violet-500"><img class="h-10 w-10"
+                                                src="../Images/live.png" alt="" srcset=""></div>
+                                        <div class="text-sm font-medium text-gray-500">Live</div>
+                                    </div>
+                                    <div class="text-xs bg-gray-200 px-2 py-0.5 rounded-2xl text-gray-400 font-medium">
+                                        6 Months</div>
+                                </div>
+                                <div class="text-xl font-bold">CBCALV5024</div>
+                                <div class="font-bold text-green-500 flex items-center space-x-1">
+                                    <div class="text-xl"><ion-icon name="trending-down-outline"></ion-icon></div>
+                                    <div class="text-sm">10% discount</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="darkable darkhower border rounded h-40 w-[100%] md:w-72 flex items-center justify-center ml-4 lg:px-0 px-6 bg-white shadow-xl">
+                            <div class="flex-col space-y-2 items-center px-0 md:px-6">
+                                <div class="flex items-center justify-between space-x-6">
+                                    <div class="flex items-center space-x-1">
+                                        <div class="text-lg font-medium text-violet-500"><img class="h-10 w-10"
+                                                src="../Images/classroom.png" alt="" srcset=""></div>
+                                        <div class="text-sm font-medium text-gray-500">Classroom</div>
+                                    </div>
+                                    <div class="text-xs bg-gray-200 px-2 py-0.5 rounded-2xl text-gray-400 font-medium">
+                                        6 Months</div>
+                                </div>
+                                <div class="text-xl font-bold">CBCACL5024</div>
+                                <div class="font-bold text-green-500 flex items-center space-x-1">
+                                    <div class="text-xl"><ion-icon name="trending-down-outline"></ion-icon></div>
+                                    <div class="text-sm">₹1000 discount</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://kit.fontawesome.com/290d4f0eb4.js" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <%- include('../partials/footer.ejs') %>
+
+
+
+
+
+
+
+
+
+    <script src="./Placement_script.js"></script>
+    <script src="/public/globalScript.js"></script>
+
+    
+</body>
+
+</html>
+

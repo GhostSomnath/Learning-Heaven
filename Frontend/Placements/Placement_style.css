@@ -1,0 +1,698 @@
+
+/* Main CSS Here */
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    /* font-family: "Poppins", sans-serif; */
+}
+
+:root {
+    --background-color1: #fafaff;
+    --background-color2: #ffffff;
+    --background-color3: #ededed;
+    --background-color4: #caedfda4;
+    --primary-color: #00aeff;
+    --secondary-color: #0085c7;
+    --Border-color: #0f94c8;
+    --one-use-color: #0f7fc5;
+    --two-use-color: #0081cb;
+}
+
+body {
+    background-color: var(--background-color4);
+    max-width: 100%;
+    /* height:800px; */
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+}
+
+.navi {
+    font-size: 16px;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 600;
+    color: rgb(0, 166, 255);
+}
+
+.icn {
+    height: 30px;
+}
+
+.menuicn {
+    cursor: pointer;
+}
+
+
+
+
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .line {
+    width: 30px;
+    height: 3px;
+    background-color: rgb(0, 157, 255);
+    z-index: 999999;
+    margin: 3px 0;
+  }
+
+  .open .line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  .open .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .open .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+
+
+
+.main-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100vw;
+    position: relative;
+    top: -1000px;
+    z-index: 1;
+    margin-bottom: -800px;
+}
+
+
+
+.main {
+    height: calc(100vh - 70px);
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 40px 30px 30px 30px;
+}
+
+/* .main::-webkit-scrollbar-thumb {
+    background-image:
+        linear-gradient(to bottom, rgb(85, 0, 0), rgb(192, 0, 0));
+}
+
+.main::-webkit-scrollbar {
+    width: 5px;
+}
+
+.main::-webkit-scrollbar-track {
+    background-color: #9e9e9eb2;
+} */
+
+.box-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.nav {
+    min-height: 115vh;
+    width: 250px;
+    background-color: var(--background-color2);
+    position: absolute;
+    top: 0px;
+    left: 00;
+    -webkit-box-shadow: 1px 1px 10px rgba(248, 189, 189, 0.825);
+    box-shadow: 1px 1px 10px rgba(189, 224, 248, 0.825);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 30px 0 20px 10px;
+}
+
+
+.navcontainer {
+    height: calc(100vh - 70px);
+    width: 250px;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.navcontainer::-webkit-scrollbar {
+    display: none;
+}
+
+.navclose {
+    width: 80px;
+}
+
+.nav-option {
+    width: 250px;
+    height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0 30px 0 20px;
+    gap: 20px;
+    color: #626262;
+    -webkit-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.nav-option:hover {
+    border-left: 5px solid #a2a2a2;
+    background-color: #dadada;
+    cursor: pointer;
+}
+
+.nav-img {
+    height: 30px;
+}
+
+.nav-upper-options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.option1 {
+    border-left: 5px solid #006fabd7;
+    background-color: var(--Border-color);
+    color: white;
+    cursor: pointer;
+}
+
+.option1:hover {
+    border-left: 5px solid #0072abd7;
+    background-color: var(--Border-color);
+}
+
+.box {
+    height: 130px;
+    width: 230px;
+    border-radius: 20px;
+    -webkit-box-shadow: 3px 3px 10px rgba(0, 54, 87, 0.751);
+    box-shadow: 3px 3px 10px rgba(0, 57, 87, 0.751);
+    padding: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    cursor: pointer;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+.box:hover {
+    -webkit-transform: scale(1.08);
+    -ms-transform: scale(1.08);
+    transform: scale(1.08);
+}
+
+.box:nth-child(1) {
+    background-color: var(--one-use-color);
+}
+
+.box:nth-child(2) {
+    background-color: var(--two-use-color);
+}
+
+.box:nth-child(3) {
+    background-color: var(--one-use-color);
+}
+
+.box:nth-child(4) {
+    background-color: var(--two-use-color);
+}
+
+.box img {
+    height: 50px;
+}
+
+.box .text {
+    color: white;
+}
+
+.topic {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.topic-heading {
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+
+.report-container {
+    min-height: 300px;
+    max-width: 1200px;
+    margin: 0px auto 0px auto;
+    background-color: #ffffff;
+    border-radius: 30px;
+    -webkit-box-shadow: 3px 3px 10px rgb(213, 242, 255);
+    box-shadow: 3px 3px 10px rgb(213, 240, 255);
+    padding: 0px 20px 20px 20px;
+
+}
+
+.report-header {
+    height: 80px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 20px 20px 10px 20px;
+    border-bottom: 2px solid rgba(0, 88, 151, 0.59);
+}
+
+.recent-Articles {
+    font-size: 30px;
+    font-weight: 600;
+    color: #0081cb;
+}
+
+.view {
+    height: 35px;
+    width: 90px;
+    border-radius: 8px;
+    background-color: #0084cb;
+    color: white;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.report-body {
+    max-width: 1160px;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.report-topic-heading {
+    width: 1000px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.item1 {
+    width: 1520px;
+    /* display: flex;  */
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.t-op {
+    font-size: 18px;
+    letter-spacing: 0px;
+}
+
+.items {
+    width: 1000px;
+    margin-top: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.item1 {
+    margin-top: 20px;
+}
+
+.t-op-nextlvl {
+    font-size: 14px;
+    letter-spacing: 0px;
+    font-weight: 600;
+    width: 200px;
+    margin-top: 28px;
+}
+
+
+
+/* Responsive CSS Here */
+@media screen and (max-width: 950px) {
+    .nav-img {
+        height: 25px;
+    }
+
+    .nav-option {
+        gap: 30px;
+    }
+
+    .nav-option h3 {
+        font-size: 15px;
+    }
+
+    .report-topic-heading,
+    .item1,
+    .items {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .nav-img {
+        height: 30px;
+    }
+
+    .nav-option {
+        gap: 30px;
+    }
+
+    .nav-option h3 {
+        font-size: 20px;
+    }
+
+    .report-topic-heading,
+    .item1,
+    .items {
+        width: 700px;
+    }
+
+    .navcontainer {
+        width: 95vw;
+        position: absolute;
+        -webkit-transition: all 0.6s ease-in-out;
+        -o-transition: all 0.6s ease-in-out;
+        transition: all 0.6s ease-in-out;
+        top: 0;
+        left: -100vw;
+    }
+    
+
+    .nav {
+        width: 100%;
+        position: absolute;
+    }
+
+    .navclose {
+        left: 00px;
+    }
+
+
+
+    .main {
+        padding: 40px 30px 30px 30px;
+    }
+
+    .logosec {
+        width: 100%;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        z-index: 100;
+        position: absolute;
+    }
+
+}
+
+@media screen and (max-width: 490px) {
+    
+
+    .logosec {
+        width: 100%;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        z-index: 100;
+        position: absolute;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .menuicn {
+        height: 25px;
+    }
+
+    .nav-img {
+        height: 25px;
+    }
+
+    .nav-option {
+        gap: 25px;
+    }
+
+    .nav-option h3 {
+        font-size: 12px;
+    }
+
+    .nav-upper-options {
+        gap: 15px;
+    }
+
+    .recent-Articles {
+        font-size: 20px;
+    }
+
+    .report-topic-heading,
+    .item1,
+    .items {
+        width: 550px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .recent-Articles {
+        font-size: 17px;
+    }
+
+    .view {
+        width: 60px;
+        font-size: 10px;
+        height: 27px;
+    }
+
+    .report-header {
+        height: 60px;
+        padding: 10px 10px 5px 10px;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+    .recent-Articles {
+        font-size: 12px;
+    }
+
+    .view {
+        width: 50px;
+        font-size: 8px;
+        height: 27px;
+    }
+
+    .report-header {
+        height: 60px;
+        padding: 10px 5px 5px 5px;
+    }
+
+    .t-op {
+        font-size: 12px;
+    }
+
+    .t-op-nextlvl {
+        font-size: 10px;
+    }
+
+    .report-topic-heading,
+    .item1,
+    .items {
+        width: 300px;
+    }
+
+    .report-body {
+        padding: 10px;
+    }
+
+    
+
+}
+
+
+.heading {
+    margin-top: -45px;
+    margin-bottom: 30px;
+}
+
+
+.i1 {
+    padding-left: 100px;
+}
+
+.i2 {
+    padding-left: 120px;
+}
+
+.i3 {
+    padding-left: 100px;
+    margin-top: 5px;
+}
+
+.one {
+    margin-top: -5px !important;
+}
+
+
+
+
+
+
+
+/* --------Blog Styling-------------- */
+.blogtopper{
+    margin-top: -60rem;
+    margin-bottom: 10rem;
+}
+
+/* Dark theme styles */
+.dark {
+    background-color: #1a202c !important;
+    color: #ffffff !important;
+}
+
+.dark .text-blue-600 {
+    color: #1e90ff;
+}
+
+/* .dark hr {
+    border-color: #444;
+} */
+
+/* Styles for the toggle theme button */
+.toggle-theme {
+    position: fixed;
+    bottom: 20px; /* Set distance from bottom */
+    right: 20px;  /* Set distance from right */
+    height: 50px; /* Button height */
+    width: 50px;  /* Button width */
+    background-color: #f0f0f0; /* Button background color */
+    border: none; /* Remove default button border */
+    border-radius: 50%; /* Rounded corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.dark .toggle-theme {
+    background-color: #333; /* Dark mode button background color */
+}
+
+.toggle-theme i {
+    font-size: 24px; /* Font Awesome icon size */
+    transition: color 0.3s ease; /* Smooth transition for icon color */
+}
+
+.dark .toggle-theme i {
+    color: #f0f0f0; /* Dark mode icon color */
+}
+
+
+
+
+.absolute-top-hr {
+    width: 100%;
+    border-color: white;
+}
+
+/* Additional dark mode styles for other elements */
+.dark .darkable {
+    background-color: #1a202c;
+    color: #ffffff;
+}
+
+.dark .darkable .darkhower:hover{
+    background-color: #025e7c !important;
+    
+}
+
+
+
+
+
+
+
+
+.content-snippet {
+    max-height: 100px; /* Adjust based on your line height */
+    overflow: hidden;
+    position: relative;
+}
+
+.content-snippet::after {
+    content: '...';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to bottom, transparent, white 50%);
+    width: 100%;
+    height: 20px; /* Adjust based on your design */
+}

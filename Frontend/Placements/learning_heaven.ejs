@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link class="fill-white" rel="icon" href="../Images/logo3-removebg-preview.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../Components/Navbar.css">
+  <link rel="stylesheet" href="../Components/Banner.css">
+  <link rel="stylesheet" href="../Components/Footer.css">
+  <link rel="stylesheet" href="../Components/Cursor.css">
+  <link rel="stylesheet" href="/public/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>Learning Heaven</title>
+  <style>
+    body::-webkit-scrollbar {
+      display: none;
+    }
+    /* Style for the fixed side nav */
+    .side-nav {
+      position: fixed;
+      top: 4rem; /* Adjust as needed to place below the horizontal navbar */
+      left: 0;
+      width: 16rem; /* Default width */
+      height: auto; /* Adjust height to fit content */
+      background-color: #1f2937; /* Dark gray */
+      color: white;
+      padding: 1rem;
+      box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+      transition: width 0.3s ease;
+      z-index: 20; /* Ensure it stays above other content */
+    }
+    
+    .side-nav.shrink {
+      width: 4rem; /* Width when shrunk */
+    }
+    
+    .main-content {
+      margin-left: 16rem; /* Default margin */
+      padding-top: 4rem; /* Adjust to avoid overlap with the navbar */
+      transition: margin-left 0.3s ease;
+    }
+    
+    .main-content.shrink {
+      margin-left: 4rem; /* Margin when side nav is shrunk */
+    }
+    
+    .side-nav.shrink ul li a {
+      text-align: center;
+    }
+    
+    .side-nav.shrink ul li a span {
+      display: none; /* Hide text when shrunk */
+    }
+    
+    .side-nav .nav-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      transition: opacity 0.3s ease;
+    }
+    
+    .side-nav .nav-item img {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 1rem;
+    }
+    
+    .side-nav .nav-item span {
+      display: inline-block;
+      transition: opacity 0.3s ease;
+    }
+    
+    .side-nav.shrink .nav-item span {
+      opacity: 0; /* Hide text when shrunk */
+    }
+    
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="skyblue p-4 darkable fixed top-0 w-full z-20" id="navlogo">
+    <div class="container mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <a href="#" class="flex items-center text-white text-xl font-bold">
+        <img id="nav-logo" src="../Images/logo4-removebg-preview.png" alt="Logo" class="w-52 h-8 mr-2">
+      </a>
+
+      <!-- Hamburger Menu Button -->
+      <button class="text-white focus:outline-none lg:hidden" id="menu-btn" aria-label="Toggle menu">
+        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path id="menu-icon-line1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16"></path>
+          <path id="menu-icon-line2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16"></path>
+          <path id="menu-icon-line3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Navbar Links -->
+      <ul class="hidden lg:flex space-x-4">
+        <li><a href="/" class="darkable nav-link text-white">Home</a></li>
+        <li><a href="/courses" class="darkable nav-link text-white">Courses</a></li>
+        <li><a href="/resources" class="darkable nav-link text-white">Resources</a></li>
+        <li><a href="/contact" class="darkable nav-link text-white">Contact</a></li>
+        <li><a href="/products" class="darkable nav-link text-white">Products</a></li>
+        <li><a href="/Placements" class="darkable nav-link text-white">Placements</a></li>
+        <li><a href="/CodeCompiler.html" class="darkable nav-link text-white">Compiler</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Side Navigation Bar -->
+  <aside class="side-nav" id="side-nav">
+    <button id="side-nav-toggle" class="text-white absolute top-4 right-4">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path id="side-nav-icon-line1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <h2 class="text-2xl mb-4">Navigation</h2>
+    <ul>
+      <li class="nav-item" data-content="tech-blogs">
+        <img src="../Images/tech-blogs-icon.png" alt="Tech Blogs">
+        <a href="#" class="nav-link"><span>Tech Blogs</span></a>
+      </li>
+      <li class="nav-item" data-content="internships">
+        <img src="../Images/internships-icon.png" alt="Internships">
+        <a href="#" class="nav-link"><span>Internships</span></a>
+      </li>
+      <li class="nav-item" data-content="jobs-updates">
+        <img src="../Images/jobs-updates-icon.png" alt="Jobs Updates">
+        <a href="#" class="nav-link"><span>Jobs Updates</span></a>
+      </li>
+      <li class="nav-item" data-content="build-resume">
+        <img src="../Images/build-resume-icon.png" alt="Build Resume">
+        <a href="#" class="nav-link"><span>Build Resume</span></a>
+      </li>
+      <li class="nav-item" data-content="notes">
+        <img src="../Images/notes-icon.png" alt="Notes">
+        <a href="#" class="nav-link"><span>Notes</span></a>
+      </li>
+      <li class="nav-item" data-content="gifts">
+        <img src="../Images/gifts-icon.png" alt="Gifts">
+        <a href="#" class="nav-link"><span>Gifts</span></a>
+      </li>
+      <li class="nav-item" data-content="tips-for-jobs">
+        <img src="../Images/tips-for-jobs-icon.png" alt="Tips For Jobs">
+        <a href="#" class="nav-link"><span>Tips For Jobs</span></a>
+      </li>
+    </ul>
+  </aside>
+
+
+  
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Banner -->
+    <div class="banner darkable">
+      <p>Contact Somnath Kaushik for discount coupon Codes on Coding Blocks Courses <a href="mailto:somnath.kaushik_cs21@gla.ac.in">
+          <d>somnath.kaushik_cs21@gla.ac.in</d>
+        </a></p>
+      <button id="closeBanner">X</button>
+    </div>
+
+    
+  </main>
+
+  <script>
+    // Toggle side nav visibility with button
+    document.getElementById('side-nav-toggle').addEventListener('click', function () {
+      var sideNav = document.getElementById('side-nav');
+      var mainContent = document.querySelector('.main-content');
+      sideNav.classList.toggle('shrink');
+      mainContent.classList.toggle('shrink');
+    });
+
+    // JavaScript to handle banner removal
+    document.getElementById('closeBanner').addEventListener('click', function () {
+      var banner = document.querySelector('.banner');
+      banner.style.display = 'none';
+    });
+  </script>
+
+
+  <!-- Content Area -->
+  <div id="content-area" class="main-content">
+    <%- include('partials/tech_blogs') %>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navItems = document.querySelectorAll('.nav-item');
+      const contentArea = document.getElementById('content-area');
+
+      // Function to load content based on the selected option
+      function loadContent(contentId) {
+        if (contentId === 'tech-blogs') {
+          contentArea.innerHTML = document.querySelector('#tech_blogs').innerHTML;
+        } else {
+          // Handle other content sections or make an AJAX request
+          contentArea.innerHTML = `<h2>${contentId.replace('-', ' ').toUpperCase()} Content</h2>`;
+        }
+      }
+
+      // Load Tech Blogs content by default
+      loadContent('tech-blogs');
+
+      navItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const contentId = item.getAttribute('data-content');
+          loadContent(contentId);
+        });
+      });
+    });
+  </script>
+
+
+
+
+
+</body>
+
+</html>
