@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const compiler = require('compilex');
-// const cors = require('cors')
+const cors = require('cors')
 const options = { static: true };
 compiler.init(options);
 const path = require("path");
@@ -15,6 +15,8 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const MongoStore = require("connect-mongo");
 const seedDB = require('./seed');
+
+app.use(cors());
 
 // Import Routes
 const articleRouter = require('./routes/articleRoutes');
@@ -28,7 +30,7 @@ const productApi = require("./routes/api/productapi");
 
 
 // Database URL
-const dbURL = "mongodb://127.0.0.1:27017/Learning-Heaven";
+const dbURL = "mongodb+srv://somnath21kaushik:somnath@learning-heaven.ucnxlzr.mongodb.net/";
 mongoose.set("strictQuery", true);
 mongoose.connect(dbURL)
     .then(() => console.log("DB Connected"))
