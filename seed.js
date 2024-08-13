@@ -2,6 +2,15 @@ const mongoose = require('mongoose');
 
 const Product = require('./models/Product');
 
+const dbURL = 'mongodb+srv://somnath21kaushik:somnath@learning-heaven.ucnxlzr.mongodb.net/';
+
+mongoose.connect(dbURL)
+    .then(() => console.log('DB Connected'))
+    .catch((err) => console.log(err));
+
+
+
+
 
 const products = [
     {
