@@ -134,7 +134,10 @@ app.get("/resources", (req, res) => {
     res.render("Resources/Resources");
 });
 
-app.get("/compiler", (req, res) => {
+app.get("/compiler", function (req, res){
+    compiler.flush(function () {
+        console.log('deleted');
+    });
     res.render("Compiler/Compiler");
 });
 

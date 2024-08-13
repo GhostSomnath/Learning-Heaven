@@ -10,3 +10,4 @@ const ArticleSchema = new mongoose.Schema({
 
 const Tech_News = mongoose.model('Tech_News', ArticleSchema);
 module.exports = Tech_News;
+
